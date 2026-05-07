@@ -1,6 +1,0 @@
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/Command.idl
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/JointCommand.idl
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/JointState.idl
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/State.idl
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/FootSensor.idl
-/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/joint_msgs/rosidl_adapter/joint_msgs:msg/FootSensorState.idl

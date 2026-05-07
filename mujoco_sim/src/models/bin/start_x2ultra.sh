@@ -19,8 +19,6 @@ start_iox_roudi() {
 
 start_iox_roudi
 
-source /opt/ros/humble/setup.bash
-source /home/suzumiyaharuhi/rl_deploy/lxx2ultra_aimdk/install/setup.bash
 source ../share/ros2_plugin_proto/local_setup.bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd):$(pwd)/../lib
 

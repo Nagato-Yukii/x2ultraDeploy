@@ -13,6 +13,10 @@ dependencies = [
     "omegaconf>=2.3.0",
     "pyyaml>=6.0.3",
     "onnxruntime>=1.23.2",
+    "empy==3.3.4",
+    "catkin_pkg>=0.5.2",
+    "lark>=1.1.5",
+    "pyparsing",
 ]
 
 [project.optional-dependencies]

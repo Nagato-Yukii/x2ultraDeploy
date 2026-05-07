@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG "CMakeFiles/iox-introspection-client.dir/source/introspection_main.cpp.o" -o iox-introspection-client  libiceoryx_introspection.a ../posh/libiceoryx_posh.a ../hoofs/libiceoryx_hoofs.a ../platform/libiceoryx_platform.a -lacl -lpthread -latomic -lrt -lncurses -ltinfo 

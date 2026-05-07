@@ -123,6 +123,7 @@ void JointSensorRos2Publisher::PublishSensorData() {
     joint_state.header.stamp.nanosec = static_cast<uint32_t>(timestamp % 1000000000LL);
     joint_state.header.frame_id = frame_id_;
     joint_state.header.sequence = message_sequence_++;
+    joint_state.state.value = 0;
 
     joint_state.joints.resize(joint_num_);
     for (size_t i = 0; i < joint_num_; ++i) {

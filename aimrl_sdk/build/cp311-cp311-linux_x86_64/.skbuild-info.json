@@ -1,8 +1,0 @@
-{
-  "source_dir": "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk",
-  "build_dir": "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64",
-  "cmake_path": "/home/suzumiyaharuhi/.local/bin/cmake",
-  "skbuild_path": "/home/suzumiyaharuhi/.cache/uv/builds-v0/.tmpdGfGQf/lib/python3.11/site-packages/scikit_build_core",
-  "skbuild_version": "0.12.2",
-  "python_executable": "/home/suzumiyaharuhi/.cache/uv/builds-v0/.tmpdGfGQf/bin/python"
-}

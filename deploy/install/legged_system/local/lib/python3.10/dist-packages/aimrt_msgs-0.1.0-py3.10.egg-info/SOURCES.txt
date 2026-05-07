@@ -1,6 +1,0 @@
-setup.py
-aimrt_msgs/__init__.py
-aimrt_msgs.egg-info/PKG-INFO
-aimrt_msgs.egg-info/SOURCES.txt
-aimrt_msgs.egg-info/dependency_links.txt
-aimrt_msgs.egg-info/top_level.txt

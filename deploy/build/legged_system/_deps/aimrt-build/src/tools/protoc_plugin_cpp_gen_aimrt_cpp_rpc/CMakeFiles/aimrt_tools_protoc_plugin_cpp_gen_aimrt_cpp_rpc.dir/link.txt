@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG CMakeFiles/aimrt_tools_protoc_plugin_cpp_gen_aimrt_cpp_rpc.dir/main.cc.o -o protoc_plugin_cpp_gen_aimrt_cpp_rpc  ../../../../protobuf-build/libprotobuf.a ../../../../protobuf-build/libprotoc.a ../../../../protobuf-build/libprotobuf.a 

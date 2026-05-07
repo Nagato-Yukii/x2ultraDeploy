@@ -1,2 +1,0 @@
-/usr/bin/ar qc libaimrt_protocols_geometry_pb_gencode.a CMakeFiles/aimrt_protocols_geometry_pb_gencode.dir/quaternion.pb.cc.o CMakeFiles/aimrt_protocols_geometry_pb_gencode.dir/vector3.pb.cc.o
-/usr/bin/ranlib libaimrt_protocols_geometry_pb_gencode.a

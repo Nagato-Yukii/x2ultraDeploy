@@ -1,0 +1,535 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/libaimrt_protocols_ros2_plugin_proto_aimrt_rpc_gencode.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_ros2_aimrt_rpc_gencode_target_for_one_file",
+			"install",
+			"target_link_libraries",
+			"add_dependencies",
+			"include",
+			"ament_execute_extensions",
+			"rosidl_generate_interfaces",
+			"add_definitions",
+			"find_package",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/tools/ros2_py_gen_aimrt_cpp_rpc/Ros2AimRTRpcGenCode.cmake",
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/protocols/plugins/ros2_plugin_proto/CMakeLists.txt",
+			"/opt/ros/humble/share/rosidl_generator_cpp/cmake/rosidl_generator_cpp_generate_interfaces.cmake",
+			"/opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake",
+			"/opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake",
+			"/opt/ros/humble/share/ament_cmake_ros/cmake/ament_cmake_ros-extras.cmake",
+			"/opt/ros/humble/share/ament_cmake_ros/cmake/ament_cmake_rosConfig.cmake",
+			"/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/cmake/rosidl_typesupport_fastrtps_c_generate_interfaces.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 71,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 34,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 1,
+				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 286,
+				"parent" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 48,
+				"parent" : 6
+			},
+			{
+				"file" : 2,
+				"parent" : 7
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 139,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 48,
+				"parent" : 6
+			},
+			{
+				"file" : 7,
+				"parent" : 10
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 21,
+				"parent" : 11
+			},
+			{
+				"file" : 6,
+				"parent" : 12
+			},
+			{
+				"command" : 5,
+				"file" : 6,
+				"line" : 41,
+				"parent" : 13
+			},
+			{
+				"file" : 5,
+				"parent" : 14
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 25,
+				"parent" : 15
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 1
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 29,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fdiagnostics-color=always -fPIC -O3 -DNDEBUG -fdiagnostics-color=always"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "AIMRT_RUNTIME_VERSION=\"1.2.0\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "AIMRT_USE_FMT_LIB"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FASTCDR_DYN_LINK"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FMT_HEADER_ONLY=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "RCUTILS_ENABLE_FAULT_INJECTION"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "ROS_PACKAGE_NAME=\"ros2_plugin_proto\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "YAML_CPP_STATIC_DEFINE"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 17,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_ros2_interface/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_ros2_interface"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_cpp_interface/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_cpp_interface"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/common/util/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/common/util"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/fmt-src/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_c_interface/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_module_c_interface"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/libunifex-src/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/libunifex-build/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/common/ros2_util/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/common/ros2_util"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/../../include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/yaml-cpp-src/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_generator_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_typesupport_fastrtps_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_typesupport_introspection_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rclcpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/ament_index_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/libstatistics_collector"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/builtin_interfaces"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_runtime_c"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcutils"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_interface"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/fastcdr"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_runtime_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_fastrtps_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rmw"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_fastrtps_c"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_introspection_c"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_introspection_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcl"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcl_interfaces"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcl_logging_interface"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcl_yaml_param_parser"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/libyaml_vendor"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/tracetools"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rcpputils"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/statistics_msgs"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosgraph_msgs"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_cpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/ros/humble/include/rosidl_typesupport_c"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4,
+					4
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "unifex::@d26759848343cffdd544"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "jsoncpp_static::@73fdddb0eb7ed205e753"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "yaml-cpp::@c1fb6b535d5396bcd0b2"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "ros2_plugin_proto__cpp::@0804fb772a893664f9f2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ros2_plugin_proto__rosidl_typesupport_fastrtps_cpp::@0804fb772a893664f9f2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ros2_plugin_proto__rosidl_typesupport_introspection_cpp::@0804fb772a893664f9f2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ros2_plugin_proto__rosidl_typesupport_cpp::@0804fb772a893664f9f2"
+		}
+	],
+	"id" : "aimrt_protocols_ros2_plugin_proto_aimrt_rpc_gencode::@0804fb772a893664f9f2",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 3,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/tmp/tmp_h9q9_k4/wheel/platlib"
+		}
+	},
+	"name" : "aimrt_protocols_ros2_plugin_proto_aimrt_rpc_gencode",
+	"nameOnDisk" : "libaimrt_protocols_ros2_plugin_proto_aimrt_rpc_gencode.a",
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/protocols/plugins/ros2_plugin_proto"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 18,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/RosRpcWrapper.aimrt_rpc.srv.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/RosRpcWrapper.aimrt_rpc.srv.cc.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 17,
+			"isGenerated" : true,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/RosRpcWrapper.aimrt_rpc.srv.h",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

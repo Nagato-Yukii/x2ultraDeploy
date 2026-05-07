@@ -1,0 +1,79 @@
+[0.013s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake /home/suzumiyaharuhi/rl_deploy_v2/deploy/deploy_assets -DCMAKE_INSTALL_PREFIX=/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets
+[0.074s] -- The C compiler identification is GNU 11.4.0
+[0.114s] -- The CXX compiler identification is GNU 11.4.0
+[0.122s] -- Detecting C compiler ABI info
+[0.157s] -- Detecting C compiler ABI info - done
+[0.163s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.164s] -- Detecting C compile features
+[0.164s] -- Detecting C compile features - done
+[0.166s] -- Detecting CXX compiler ABI info
+[0.215s] -- Detecting CXX compiler ABI info - done
+[0.224s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.224s] -- Detecting CXX compile features
+[0.224s] -- Detecting CXX compile features - done
+[0.228s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.454s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.558s] -- Configuring done
+[0.560s] -- Generating done
+[0.561s] -- Build files have been written to: /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets
+[0.567s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake /home/suzumiyaharuhi/rl_deploy_v2/deploy/deploy_assets -DCMAKE_INSTALL_PREFIX=/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets
+[0.568s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --build /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets -- -j32 -l32
+[0.598s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --build /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets -- -j32 -l32
+[0.622s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --install /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets
+[0.642s] -- Install configuration: ""
+[0.642s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty
+[0.642s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2
+[0.642s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/VERSION_NUMBER
+[0.644s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib
+[0.644s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/libonnxruntime.so.1.19.2
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake/onnxruntime
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake/onnxruntime/onnxruntimeConfigVersion.cmake
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake/onnxruntime/onnxruntimeConfig.cmake
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake/onnxruntime/onnxruntimeTargets-release.cmake
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/cmake/onnxruntime/onnxruntimeTargets.cmake
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/libonnxruntime.so
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/libonnxruntime.so.1
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/pkgconfig
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/pkgconfig/libonnxruntime.pc
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/lib/libonnxruntime_providers_shared.so
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_cxx_api.h
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/cpu_provider_factory.h
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_run_options_config_keys.h
+[0.663s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_lite_custom_op.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_session_options_config_keys.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_float16.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/provider_options.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_c_api.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/onnxruntime_cxx_inline.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/core
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/core/providers
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/core/providers/resource.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include/core/providers/custom_op_context.h
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/LICENSE
+[0.664s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/README.md
+[0.665s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/GIT_COMMIT_ID
+[0.665s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/Privacy.md
+[0.665s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/ThirdPartyNotices.txt
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/scripts
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/scripts/joy_interface.py
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/scripts/start_rl_control_sim.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/scripts/package.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/scripts/start_rl_control_real.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/ament_index/resource_index/package_run_dependencies/deploy_assets
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/ament_index/resource_index/parent_prefix_path/deploy_assets
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/environment/ament_prefix_path.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/environment/ament_prefix_path.dsv
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/environment/path.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/environment/path.dsv
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/local_setup.bash
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/local_setup.sh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/local_setup.zsh
+[0.666s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/local_setup.dsv
+[0.667s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/package.dsv
+[0.667s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/ament_index/resource_index/packages/deploy_assets
+[0.667s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/cmake/deploy_assetsConfig.cmake
+[0.667s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/cmake/deploy_assetsConfig-version.cmake
+[0.667s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/deploy_assets/share/deploy_assets/package.xml
+[0.672s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --install /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/deploy_assets

@@ -1,0 +1,132 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/robot_descriptions_public
+-- Install configuration: ""
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/launch
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/launch/display.launch.py
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/urdf
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/urdf/x2_ultra.urdf
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/urdf/model.urdf
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_hip_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_wrist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/torso_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_ankle_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_shoulder_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_wrist_fist_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/lidar_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/waist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_hip_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/rgbd_head_front_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/pelvis.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/waist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_shoulder_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_wrist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_hip_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_shoulder_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_wrist_fist_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_wrist_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/head_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_hip_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_hip_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_knee_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_wrist_hand_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/imu_in_head_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_elbow_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/imu_in_pelvis_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/imu_in_torso_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_wrist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_shoulder_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_wrist_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_ankle_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_elbow_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_shoulder_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_knee_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/rgb_head_rear_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_wrist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/rgb_head_center_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_ankle_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/torso_plus_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_shoulder_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_wrist_hand_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/left_hip_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/stereo_head_front_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/right_ankle_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/mesh/head_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_hip_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_wrist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/torso_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_ankle_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_shoulder_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_wrist_fist_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/lidar_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/waist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_hip_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/rgbd_head_front_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/pelvis.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/waist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_shoulder_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_wrist_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_hip_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_shoulder_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_wrist_fist_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_wrist_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/head_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_hip_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_hip_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_knee_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_wrist_hand_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/imu_in_head_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_elbow_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/imu_in_pelvis_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/imu_in_torso_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_wrist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_shoulder_yaw_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_wrist_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_ankle_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_elbow_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_shoulder_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_knee_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/rgb_head_rear_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_wrist_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/rgb_head_center_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_ankle_roll_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/torso_plus_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_shoulder_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_wrist_hand_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/left_hip_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/stereo_head_front_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/right_ankle_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/convex/head_pitch_link.STL
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/rviz
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/rviz/display.rviz
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/ament_index/resource_index/package_run_dependencies/robot_descriptions_public
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/ament_index/resource_index/parent_prefix_path/robot_descriptions_public
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/environment/ament_prefix_path.sh
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/environment/ament_prefix_path.dsv
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/environment/path.sh
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/environment/path.dsv
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/local_setup.bash
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/local_setup.sh
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/local_setup.zsh
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/local_setup.dsv
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/package.dsv
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/ament_index/resource_index/packages/robot_descriptions_public
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/cmake/robot_descriptions_publicConfig.cmake
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/cmake/robot_descriptions_publicConfig-version.cmake
+-- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/robot_descriptions_public/share/robot_descriptions_public/package.xml

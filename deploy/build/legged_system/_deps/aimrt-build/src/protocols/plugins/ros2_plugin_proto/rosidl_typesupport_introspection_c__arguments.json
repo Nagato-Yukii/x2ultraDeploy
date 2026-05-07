@@ -1,0 +1,21 @@
+{
+  "package_name": "ros2_plugin_proto",
+  "output_dir": "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_typesupport_introspection_c/ros2_plugin_proto",
+  "template_dir": "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource",
+  "idl_tuples": [
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_adapter/ros2_plugin_proto:msg/RosMsgWrapper.idl",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_adapter/ros2_plugin_proto:srv/RosRpcWrapper.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/humble/lib/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_typesupport_introspection_c/__init__.py",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/idl__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/idl__type_support.c.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/msg__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/msg__type_support.c.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__type_support.c.em",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_adapter/ros2_plugin_proto/msg/RosMsgWrapper.idl",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/plugins/ros2_plugin_proto/rosidl_adapter/ros2_plugin_proto/srv/RosRpcWrapper.idl"
+  ]
+}

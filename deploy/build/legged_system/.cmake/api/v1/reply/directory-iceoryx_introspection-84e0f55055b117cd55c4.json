@@ -1,0 +1,159 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"install_target_directories_and_header",
+			"setup_install_directories_and_export_package",
+			"iox_add_library",
+			"install_package_files_and_export",
+			"iox_add_executable"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPackageHelper.cmake",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/tools/introspection/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 48,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 391,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 108,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 114,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 65,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 272,
+				"parent" : 9
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 4,
+			"component" : "bin",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"iceoryx_introspection/libiceoryx_introspection.a"
+			],
+			"targetId" : "iceoryx_introspection::@87eb0d5ca28642aa3a4a",
+			"targetIndex" : 41,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "dev",
+			"destination" : "include/iceoryx/v0.1.0",
+			"paths" : 
+			[
+				{
+					"from" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/tools/introspection/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_introspection",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/iceoryx_introspection/iceoryx_introspectionConfigVersion.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/iceoryx_introspection/iceoryx_introspectionConfig.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_introspection",
+			"exportName" : "iceoryx_introspectionTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "iceoryx_introspection::@87eb0d5ca28642aa3a4a",
+					"index" : 41
+				}
+			],
+			"paths" : 
+			[
+				"iceoryx_introspection/CMakeFiles/Export/28797edf6c249c5ab2042635228273a5/iceoryx_introspectionTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"iceoryx_introspection/iox-introspection-client"
+			],
+			"targetId" : "iox-introspection-client::@87eb0d5ca28642aa3a4a",
+			"targetIndex" : 47,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "iceoryx_introspection",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/tools/introspection"
+	}
+}

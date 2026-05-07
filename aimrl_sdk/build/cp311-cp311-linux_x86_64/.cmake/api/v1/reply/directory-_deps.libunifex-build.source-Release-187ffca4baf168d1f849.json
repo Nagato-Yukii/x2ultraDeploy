@@ -1,0 +1,120 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/libunifex-src/source/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 88,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 90,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 93,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/libunifex-build/source/libunifex.a"
+			],
+			"targetId" : "unifex::@d26759848343cffdd544",
+			"targetIndex" : 74,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/unifex",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/libunifex-build/include/unifex/config.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "build/cp311-cp311-linux_x86_64/_deps/libunifex-src/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/unifex",
+			"exportName" : "unifexTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "unifex::@d26759848343cffdd544",
+					"index" : 74
+				}
+			],
+			"paths" : 
+			[
+				"_deps/libunifex-build/source/CMakeFiles/Export/4285d2d6c9b0d4ccfb00f86979b8ccea/unifexConfig.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/libunifex-build/source/unifex.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/libunifex-build/source",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/libunifex-src/source"
+	}
+}

@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ros2_plugin_proto__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros2_plugin_proto/msg/detail/ros_msg_wrapper__type_support.c.o"
+  "CMakeFiles/ros2_plugin_proto__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros2_plugin_proto/msg/detail/ros_msg_wrapper__type_support.c.o.d"
+  "CMakeFiles/ros2_plugin_proto__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros2_plugin_proto/srv/detail/ros_rpc_wrapper__type_support.c.o"
+  "CMakeFiles/ros2_plugin_proto__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros2_plugin_proto/srv/detail/ros_rpc_wrapper__type_support.c.o.d"
+  "libros2_plugin_proto__rosidl_typesupport_introspection_c.pdb"
+  "libros2_plugin_proto__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/ros2_plugin_proto/msg/detail/ros_msg_wrapper__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/ros2_plugin_proto/msg/detail/ros_msg_wrapper__type_support.c"
+  "rosidl_typesupport_introspection_c/ros2_plugin_proto/srv/detail/ros_rpc_wrapper__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/ros2_plugin_proto/srv/detail/ros_rpc_wrapper__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/ros2_plugin_proto__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

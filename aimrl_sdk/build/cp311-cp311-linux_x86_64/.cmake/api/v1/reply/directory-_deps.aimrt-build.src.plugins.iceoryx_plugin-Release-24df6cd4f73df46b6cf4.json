@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/plugins/iceoryx_plugin/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"_deps/aimrt-build/src/plugins/iceoryx_plugin/libaimrt_iceoryx_plugin.so"
+			],
+			"targetId" : "aimrt_plugins_iceoryx_plugin::@ecfcd6cc3bdc0a9a7ddc",
+			"targetIndex" : 16,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/plugins/iceoryx_plugin",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/plugins/iceoryx_plugin"
+	}
+}

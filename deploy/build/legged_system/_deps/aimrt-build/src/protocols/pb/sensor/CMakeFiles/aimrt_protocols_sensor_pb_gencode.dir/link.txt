@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaimrt_protocols_sensor_pb_gencode.a CMakeFiles/aimrt_protocols_sensor_pb_gencode.dir/image.pb.cc.o CMakeFiles/aimrt_protocols_sensor_pb_gencode.dir/imu.pb.cc.o CMakeFiles/aimrt_protocols_sensor_pb_gencode.dir/joint_state.pb.cc.o CMakeFiles/aimrt_protocols_sensor_pb_gencode.dir/touch_sensor_state.pb.cc.o
+/usr/bin/ranlib libaimrt_protocols_sensor_pb_gencode.a

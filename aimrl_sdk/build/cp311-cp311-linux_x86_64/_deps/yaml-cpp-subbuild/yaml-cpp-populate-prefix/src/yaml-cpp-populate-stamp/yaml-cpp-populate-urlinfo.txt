@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/yaml-cpp-subbuild/yaml-cpp-populate-prefix/src/yaml-cpp-populate-stamp/download-yaml-cpp-populate.cmake;COMMAND;/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/yaml-cpp-subbuild/yaml-cpp-populate-prefix/src/yaml-cpp-populate-stamp/verify-yaml-cpp-populate.cmake;COMMAND;/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/yaml-cpp-subbuild/yaml-cpp-populate-prefix/src/yaml-cpp-populate-stamp/extract-yaml-cpp-populate.cmake
+source_dir=/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/yaml-cpp-src
+work_dir=/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps
+url(s)=https://github.com/jbeder/yaml-cpp/archive/0.8.0.tar.gz
+hash=
+no_extract=
+

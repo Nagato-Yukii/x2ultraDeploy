@@ -1,0 +1,300 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/jsoncpp-build/src/lib_json/libjsoncpp.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"add_compile_options",
+			"include_directories",
+			"target_include_directories",
+			"target_compile_features"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/CMakeLists.txt",
+			"build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 142,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 199,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 138,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 142,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 118,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 165,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 163,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fdiagnostics-color=always -fPIC -O3 -DNDEBUG -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wconversion"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Werror=strict-aliasing"
+				},
+				{
+					"fragment" : "-std=c++11"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/aimrl_sdk/build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/../../include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9,
+					9
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				9,
+				11,
+				12
+			]
+		}
+	],
+	"id" : "jsoncpp_static::@73fdddb0eb7ed205e753",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/tmp/tmp_h9q9_k4/wheel/platlib"
+		}
+	},
+	"name" : "jsoncpp_static",
+	"nameOnDisk" : "libjsoncpp.a",
+	"paths" : 
+	{
+		"build" : "_deps/jsoncpp-build/src/lib_json",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Public API",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				8,
+				10
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				9,
+				11,
+				12
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/config.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/forwards.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/json_features.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/value.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/reader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/version.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/writer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/include/json/assertions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/json_tool.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/json_reader.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/json_valueiterator.inl",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/json_value.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/json_writer.cpp",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

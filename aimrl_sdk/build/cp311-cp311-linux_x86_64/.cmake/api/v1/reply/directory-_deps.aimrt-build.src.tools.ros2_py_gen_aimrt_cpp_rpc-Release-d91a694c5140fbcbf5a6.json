@@ -1,0 +1,59 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/tools/ros2_py_gen_aimrt_cpp_rpc/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "cmake",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/tools/ros2_py_gen_aimrt_cpp_rpc/Ros2AimRTRpcGenCode.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/tools/ros2_py_gen_aimrt_cpp_rpc/ros2_py_gen_aimrt_cpp_rpc.py"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/tools/ros2_py_gen_aimrt_cpp_rpc",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/tools/ros2_py_gen_aimrt_cpp_rpc"
+	}
+}

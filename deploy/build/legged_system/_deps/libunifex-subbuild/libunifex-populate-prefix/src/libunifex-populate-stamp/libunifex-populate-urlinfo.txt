@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-subbuild/libunifex-populate-prefix/src/libunifex-populate-stamp/download-libunifex-populate.cmake;COMMAND;/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-subbuild/libunifex-populate-prefix/src/libunifex-populate-stamp/verify-libunifex-populate.cmake;COMMAND;/home/suzumiyaharuhi/.local/lib/python3.10/site-packages/cmake/data/bin/cmake;-P;/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-subbuild/libunifex-populate-prefix/src/libunifex-populate-stamp/extract-libunifex-populate.cmake
+source_dir=/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-src
+work_dir=/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps
+url(s)=https://github.com/facebookexperimental/libunifex/archive/591ec09e7d51858ad05be979d4034574215f5971.tar.gz
+hash=
+no_extract=
+

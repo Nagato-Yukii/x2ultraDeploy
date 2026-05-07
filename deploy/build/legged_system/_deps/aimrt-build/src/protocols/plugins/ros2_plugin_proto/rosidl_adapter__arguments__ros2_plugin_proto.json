@@ -1,0 +1,7 @@
+{
+  "package_name": "ros2_plugin_proto",
+  "non_idl_tuples": [
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/plugins/ros2_plugin_proto:msg/RosMsgWrapper.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/plugins/ros2_plugin_proto:srv/RosRpcWrapper.srv"
+  ]
+}

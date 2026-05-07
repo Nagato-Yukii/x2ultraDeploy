@@ -1,0 +1,11 @@
+{
+  "package_name": "joint_msgs",
+  "non_idl_tuples": [
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/Command.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/JointCommand.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/JointState.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/State.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/FootSensor.msg",
+    "/home/suzumiyaharuhi/rl_deploy_v2/deploy/joint_msgs:msg/FootSensorState.msg"
+  ]
+}

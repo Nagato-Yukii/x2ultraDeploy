@@ -1,0 +1,314 @@
+# Copyright (c) 2023, AgiBot Inc.
+# All rights reserved.
+
+aimrt:
+  plugin:
+    plugins:
+      - name: iceoryx_plugin
+        path: libaimrt_iceoryx_plugin.so
+      - name: ros2_plugin
+        path: libaimrt_ros2_plugin.so
+        options:
+          node_name: x2ultra_mujoco_sim_module #创建的ROS2 节点名
+          executor_type: SingleThreaded # SingleThreaded/StaticSingleThreaded/MultiThreaded
+  log:
+    core_lvl: INFO # Trace/Debug/Info/Warn/Error/Fatal/Off
+    backends:
+      - type: console
+  executor:
+    executors:
+      - name: gui_thread
+        type: simple_thread
+      - name: work_thread_pool
+        type: asio_thread
+        options:
+          thread_num: 4
+  channel:
+    backends:
+      - type: ros2
+      - type: iceoryx
+    sub_topics_options:
+      - topic_name: "/aima/sim/reset"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "(.*)/command"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "(.*)"
+        enable_backends: [iceoryx]
+    pub_topics_options:
+      - topic_name: "/aima/hal/joint/leg/state"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "/aima/hal/joint/arm/state"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "/aima/hal/joint/waist/state"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "/aima/hal/joint/head/state"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "/aima/hal/imu/torso/state"
+        enable_backends: [iceoryx, ros2]
+      - topic_name: "/tf"
+        enable_backends: [iceoryx, ros2]
+  module:
+    pkgs:
+      - path: libmujoco_sim_pkg.so
+        enable_modules: [MujocoSimModule]
+    modules:
+      - name: MujocoSimModule
+        log_lvl: INFO
+
+# Module custom configuration
+MujocoSimModule:
+  simulation_model_path: ${SIM_RESOURCE_MODEL_PATH}/x2ultra/x2_ultra.xml
+  sim_executor: work_thread_pool
+  gui_executor: gui_thread
+  initial_base_pos: [0.0, 0.0, 0.66]
+  # All joints start at zero — robot falls naturally until a controller sends a reset.
+  initial_joint_positions:
+    - { name: left_hip_pitch_joint, position: 0.0 }
+    - { name: left_hip_roll_joint, position: 0.0 }
+    - { name: left_hip_yaw_joint, position: 0.0 }
+    - { name: left_knee_joint, position: 0.0 }
+    - { name: left_ankle_pitch_joint, position: 0.0 }
+    - { name: left_ankle_roll_joint, position: 0.0 }
+    - { name: right_hip_pitch_joint, position: 0.0 }
+    - { name: right_hip_roll_joint, position: 0.0 }
+    - { name: right_hip_yaw_joint, position: 0.0 }
+    - { name: right_knee_joint, position: 0.0 }
+    - { name: right_ankle_pitch_joint, position: 0.0 }
+    - { name: right_ankle_roll_joint, position: 0.0 }
+    - { name: waist_yaw_joint, position: 0.0 }
+    - { name: waist_pitch_joint, position: 0.0 }
+    - { name: waist_roll_joint, position: 0.0 }
+    - { name: left_shoulder_pitch_joint, position: 0.0 }
+    - { name: left_shoulder_roll_joint, position: 0.0 }
+    - { name: left_shoulder_yaw_joint, position: 0.0 }
+    - { name: left_elbow_joint, position: 0.0 }
+    - { name: left_wrist_yaw_joint, position: 0.0 }
+    - { name: left_wrist_pitch_joint, position: 0.0 }
+    - { name: left_wrist_roll_joint, position: 0.0 }
+    - { name: right_shoulder_pitch_joint, position: 0.0 }
+    - { name: right_shoulder_roll_joint, position: 0.0 }
+    - { name: right_shoulder_yaw_joint, position: 0.0 }
+    - { name: right_elbow_joint, position: 0.0 }
+    - { name: right_wrist_yaw_joint, position: 0.0 }
+    - { name: right_wrist_pitch_joint, position: 0.0 }
+    - { name: right_wrist_roll_joint, position: 0.0 }
+    - { name: head_yaw_joint, position: 0.0 }
+    - { name: head_pitch_joint, position: 0.0 }
+
+  # Reset target pose sent on /aima/sim/reset — matches RLControllerBase::standJointState.
+  stand_joint_positions:
+    - { name: left_hip_pitch_joint, position: -0.15 }
+    - { name: left_hip_roll_joint, position: 0.0 }
+    - { name: left_hip_yaw_joint, position: 0.0 }
+    - { name: left_knee_joint, position: 0.3 }
+    - { name: left_ankle_pitch_joint, position: -0.15 }
+    - { name: left_ankle_roll_joint, position: 0.0 }
+    - { name: right_hip_pitch_joint, position: -0.15 }
+    - { name: right_hip_roll_joint, position: 0.0 }
+    - { name: right_hip_yaw_joint, position: 0.0 }
+    - { name: right_knee_joint, position: 0.3 }
+    - { name: right_ankle_pitch_joint, position: -0.15 }
+    - { name: right_ankle_roll_joint, position: 0.0 }
+    - { name: waist_yaw_joint, position: 0.0 }
+    - { name: waist_pitch_joint, position: 0.0 }
+    - { name: waist_roll_joint, position: 0.0 }
+    - { name: left_shoulder_pitch_joint, position: 0.3 }
+    - { name: left_shoulder_roll_joint, position: 0.2 }
+    - { name: left_shoulder_yaw_joint, position: 0.0 }
+    - { name: left_elbow_joint, position: -0.9 }
+    - { name: left_wrist_yaw_joint, position: 0.0 }
+    - { name: left_wrist_pitch_joint, position: 0.0 }
+    - { name: left_wrist_roll_joint, position: 0.0 }
+    - { name: right_shoulder_pitch_joint, position: 0.3 }
+    - { name: right_shoulder_roll_joint, position: -0.2 }
+    - { name: right_shoulder_yaw_joint, position: 0.0 }
+    - { name: right_elbow_joint, position: -0.9 }
+    - { name: right_wrist_yaw_joint, position: 0.0 }
+    - { name: right_wrist_pitch_joint, position: 0.0 }
+    - { name: right_wrist_roll_joint, position: 0.0 }
+    - { name: head_yaw_joint, position: 0.0 }
+    - { name: head_pitch_joint, position: 0.0 }
+  subscriber_options:
+    - topic: /aima/hal/joint/leg/command
+      type: joint_actuator_ros2
+      options:
+        joints:
+          - name: left_hip_pitch_joint
+            bind_joint: left_hip_pitch_joint
+          - name: left_hip_roll_joint
+            bind_joint: left_hip_roll_joint
+          - name: left_hip_yaw_joint
+            bind_joint: left_hip_yaw_joint
+          - name: left_knee_joint
+            bind_joint: left_knee_joint
+          - name: left_ankle_pitch_joint
+            bind_joint: left_ankle_pitch_joint
+          - name: left_ankle_roll_joint
+            bind_joint: left_ankle_roll_joint
+          - name: right_hip_pitch_joint
+            bind_joint: right_hip_pitch_joint
+          - name: right_hip_roll_joint
+            bind_joint: right_hip_roll_joint
+          - name: right_hip_yaw_joint
+            bind_joint: right_hip_yaw_joint
+          - name: right_knee_joint
+            bind_joint: right_knee_joint
+          - name: right_ankle_pitch_joint
+            bind_joint: right_ankle_pitch_joint
+          - name: right_ankle_roll_joint
+            bind_joint: right_ankle_roll_joint
+    - topic: /aima/hal/joint/arm/command
+      type: joint_actuator_ros2
+      options:
+        joints:
+          - name: left_shoulder_pitch_joint
+            bind_joint: left_shoulder_pitch_joint
+          - name: left_shoulder_roll_joint
+            bind_joint: left_shoulder_roll_joint
+          - name: left_shoulder_yaw_joint
+            bind_joint: left_shoulder_yaw_joint
+          - name: left_elbow_joint
+            bind_joint: left_elbow_joint
+          - name: left_wrist_yaw_joint
+            bind_joint: left_wrist_yaw_joint
+          - name: left_wrist_pitch_joint
+            bind_joint: left_wrist_pitch_joint
+          - name: left_wrist_roll_joint
+            bind_joint: left_wrist_roll_joint
+          - name: right_shoulder_pitch_joint
+            bind_joint: right_shoulder_pitch_joint
+          - name: right_shoulder_roll_joint
+            bind_joint: right_shoulder_roll_joint
+          - name: right_shoulder_yaw_joint
+            bind_joint: right_shoulder_yaw_joint
+          - name: right_elbow_joint
+            bind_joint: right_elbow_joint
+          - name: right_wrist_yaw_joint
+            bind_joint: right_wrist_yaw_joint
+          - name: right_wrist_pitch_joint
+            bind_joint: right_wrist_pitch_joint
+          - name: right_wrist_roll_joint
+            bind_joint: right_wrist_roll_joint
+    - topic: /aima/hal/joint/waist/command
+      type: joint_actuator_ros2
+      options:
+        joints:
+          - name: waist_yaw_joint
+            bind_joint: waist_yaw_joint
+          - name: waist_pitch_joint
+            bind_joint: waist_pitch_joint
+          - name: waist_roll_joint
+            bind_joint: waist_roll_joint
+    - topic: /aima/hal/joint/head/command
+      type: joint_actuator_ros2
+      options:
+        joints:
+          - name: head_yaw_joint
+            bind_joint: head_yaw_joint
+          - name: head_pitch_joint
+            bind_joint: head_pitch_joint
+
+  publisher_options:
+    - topic: /aima/hal/joint/leg/state
+      frequency: 1000
+      executor: work_thread_pool
+      type: joint_sensor_ros2
+      options:
+        joints:
+          - name: left_hip_pitch_joint
+            bind_joint: left_hip_pitch_joint
+          - name: left_hip_roll_joint
+            bind_joint: left_hip_roll_joint
+          - name: left_hip_yaw_joint
+            bind_joint: left_hip_yaw_joint
+          - name: left_knee_joint
+            bind_joint: left_knee_joint
+          - name: left_ankle_pitch_joint
+            bind_joint: left_ankle_pitch_joint
+          - name: left_ankle_roll_joint
+            bind_joint: left_ankle_roll_joint
+          - name: right_hip_pitch_joint
+            bind_joint: right_hip_pitch_joint
+          - name: right_hip_roll_joint
+            bind_joint: right_hip_roll_joint
+          - name: right_hip_yaw_joint
+            bind_joint: right_hip_yaw_joint
+          - name: right_knee_joint
+            bind_joint: right_knee_joint
+          - name: right_ankle_pitch_joint
+            bind_joint: right_ankle_pitch_joint
+          - name: right_ankle_roll_joint
+            bind_joint: right_ankle_roll_joint
+    - topic: /aima/hal/joint/arm/state
+      frequency: 1000
+      executor: work_thread_pool
+      type: joint_sensor_ros2
+      options:
+        joints:
+          - name: left_shoulder_pitch_joint
+            bind_joint: left_shoulder_pitch_joint
+          - name: left_shoulder_roll_joint
+            bind_joint: left_shoulder_roll_joint
+          - name: left_shoulder_yaw_joint
+            bind_joint: left_shoulder_yaw_joint
+          - name: left_elbow_joint
+            bind_joint: left_elbow_joint
+          - name: left_wrist_yaw_joint
+            bind_joint: left_wrist_yaw_joint
+          - name: left_wrist_pitch_joint
+            bind_joint: left_wrist_pitch_joint
+          - name: left_wrist_roll_joint
+            bind_joint: left_wrist_roll_joint
+          - name: right_shoulder_pitch_joint
+            bind_joint: right_shoulder_pitch_joint
+          - name: right_shoulder_roll_joint
+            bind_joint: right_shoulder_roll_joint
+          - name: right_shoulder_yaw_joint
+            bind_joint: right_shoulder_yaw_joint
+          - name: right_elbow_joint
+            bind_joint: right_elbow_joint
+          - name: right_wrist_yaw_joint
+            bind_joint: right_wrist_yaw_joint
+          - name: right_wrist_pitch_joint
+            bind_joint: right_wrist_pitch_joint
+          - name: right_wrist_roll_joint
+            bind_joint: right_wrist_roll_joint
+    - topic: /aima/hal/joint/waist/state
+      frequency: 1000
+      executor: work_thread_pool
+      type: joint_sensor_ros2
+      options:
+        joints:
+          - name: waist_yaw_joint
+            bind_joint: waist_yaw_joint
+          - name: waist_pitch_joint
+            bind_joint: waist_pitch_joint
+          - name: waist_roll_joint
+            bind_joint: waist_roll_joint
+    - topic: /aima/hal/joint/head/state
+      frequency: 1000
+      executor: work_thread_pool
+      type: joint_sensor_ros2
+      options:
+        joints:
+          - name: head_yaw_joint
+            bind_joint: head_yaw_joint
+          - name: head_pitch_joint
+            bind_joint: head_pitch_joint
+    - topic: /aima/hal/imu/torso/state
+      frequency: 500
+      executor: work_thread_pool
+      type: imu_sensor_ros2
+      options:
+        bind_site: imu_0     # pelvis
+        bind_framequat: body-orientation
+        bind_gyro: body-angular-velocity
+        bind_accelerometer: body-linear-acceleration
+    - topic: /tf
+      frequency: 100
+      executor: work_thread_pool
+      type: odometry_ros2
+      options:
+        bind_site: imu_0        # X2 MJCF 根 site，定义于 pelvis body (L73)
+        bind_framequat: body-orientation   # sensor name in x2_ultra.xml L340
+        bind_framepos: body-linear-pos     # sensor name in x2_ultra.xml L342

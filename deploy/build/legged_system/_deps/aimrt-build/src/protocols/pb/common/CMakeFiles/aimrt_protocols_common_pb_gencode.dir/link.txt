@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaimrt_protocols_common_pb_gencode.a CMakeFiles/aimrt_protocols_common_pb_gencode.dir/error.pb.cc.o CMakeFiles/aimrt_protocols_common_pb_gencode.dir/header.pb.cc.o CMakeFiles/aimrt_protocols_common_pb_gencode.dir/module.pb.cc.o
+/usr/bin/ranlib libaimrt_protocols_common_pb_gencode.a

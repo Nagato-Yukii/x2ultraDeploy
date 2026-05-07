@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/gflags-build",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/gflags-src"
+	}
+}

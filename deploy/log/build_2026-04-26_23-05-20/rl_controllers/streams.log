@@ -1,0 +1,108 @@
+[0.009s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake /home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers -DCMAKE_INSTALL_PREFIX=/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers
+[0.065s] -- The C compiler identification is GNU 11.4.0
+[0.105s] -- The CXX compiler identification is GNU 11.4.0
+[0.112s] -- Detecting C compiler ABI info
+[0.152s] -- Detecting C compiler ABI info - done
+[0.161s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.161s] -- Detecting C compile features
+[0.161s] -- Detecting C compile features - done
+[0.164s] -- Detecting CXX compiler ABI info
+[0.211s] -- Detecting CXX compiler ABI info - done
+[0.218s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.218s] -- Detecting CXX compile features
+[0.218s] -- Detecting CXX compile features - done
+[0.219s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[0.455s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.525s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.528s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.533s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.540s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.550s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.568s] -- Found pluginlib: 5.1.3 (/opt/ros/humble/share/pluginlib/cmake)
+[0.587s] -- Found controller_interface: 2.53.0 (/opt/ros/humble/share/controller_interface/cmake)
+[0.700s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.702s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.719s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.754s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.757s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.771s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.774s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.780s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.788s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.796s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.839s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.840s] -- Found Threads: TRUE  
+[0.867s] -- Found realtime_tools: 2.15.0 (/opt/ros/humble/share/realtime_tools/cmake)
+[0.875s] -- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+[0.880s] -- Found tf2_ros: 0.25.18 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.912s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.966s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.985s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[0.988s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[0.988s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.988s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.988s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.008s] -- Found PythonExtra: .so  
+[1.022s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.022s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers/include>;$<BUILD_INTERFACE:/home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers/../deploy_assets/thirdparty/onnxruntime-linux-x64-1.19.2/include>
+[1.022s] -- Configured cppcheck exclude dirs and/or files: 
+[1.022s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.023s] -- Added test 'lint_cmake' to check CMake code style
+[1.023s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.024s] -- Added test 'uncrustify' to check C / C++ code style
+[1.024s] -- Configured uncrustify additional arguments: 
+[1.024s] -- Added test 'xmllint' to check XML markup files
+[1.025s] -- Configuring done
+[1.033s] -- Generating done
+[1.036s] -- Build files have been written to: /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers
+[1.045s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake /home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers -DCMAKE_INSTALL_PREFIX=/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers
+[1.046s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --build /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers -- -j32 -l32
+[1.081s] [ 25%] [32mBuilding CXX object CMakeFiles/rl_controllers.dir/src/RLControllerBase.cpp.o[0m
+[1.081s] [ 50%] [32mBuilding CXX object CMakeFiles/rl_controllers.dir/src/AcController.cpp.o[0m
+[1.081s] [ 75%] [32mBuilding CXX object CMakeFiles/rl_controllers.dir/src/Utilities.cpp.o[0m
+[3.155s] [01m[K/home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers/src/RLControllerBase.cpp:[m[K In member function ‘[01m[Kvirtual void legged::RLControllerBase::updateStateEstimation(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[3.155s] [01m[K/home/suzumiyaharuhi/rl_deploy_v2/deploy/rl_controllers/src/RLControllerBase.cpp:517:66:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[3.155s]   517 | void RLControllerBase::updateStateEstimation([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &period [[maybe_unused]]) {
+[3.155s]       |                                              [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[9.577s] [100%] [32m[1mLinking CXX shared library librl_controllers.so[0m
+[10.061s] [100%] Built target rl_controllers
+[10.071s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --build /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers -- -j32 -l32
+[10.072s] Invoking command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --install /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers
+[10.092s] -- Install configuration: ""
+[10.092s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/rl_controllers.xml
+[10.092s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/config
+[10.092s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/config/x2_baseline.yaml
+[10.092s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/config/joy.yaml
+[10.092s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/launch
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/launch/rl_control_real.launch.py
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/launch/__pycache__
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/launch/__pycache__/rl_control_real.launch.cpython-310.pyc
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/policy
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/policy/X2
+[10.093s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/policy/X2/model.onnx
+[10.094s] -- Up-to-date: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/rl_controllers.xml
+[10.094s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/lib/librl_controllers.so
+[10.102s] -- Set runtime path of "/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/lib/librl_controllers.so" to ""
+[10.102s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/library_path.sh
+[10.102s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/library_path.dsv
+[10.102s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/ament_index/resource_index/package_run_dependencies/rl_controllers
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/ament_index/resource_index/parent_prefix_path/rl_controllers
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/ament_prefix_path.sh
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/ament_prefix_path.dsv
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/path.sh
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/environment/path.dsv
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/local_setup.bash
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/local_setup.sh
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/local_setup.zsh
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/local_setup.dsv
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/package.dsv
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/ament_index/resource_index/packages/rl_controllers
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/ament_index/resource_index/controller_interface__pluginlib__plugin/rl_controllers
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/export_rl_controllersExport.cmake
+[10.103s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/export_rl_controllersExport-noconfig.cmake
+[10.104s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/ament_cmake_export_targets-extras.cmake
+[10.104s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/ament_cmake_export_dependencies-extras.cmake
+[10.104s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/rl_controllersConfig.cmake
+[10.104s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/cmake/rl_controllersConfig-version.cmake
+[10.104s] -- Installing: /home/suzumiyaharuhi/rl_deploy_v2/deploy/install/rl_controllers/share/rl_controllers/package.xml
+[10.107s] Invoked command in '/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/suzumiyaharuhi/.local/bin/cmake --install /home/suzumiyaharuhi/rl_deploy_v2/deploy/build/rl_controllers

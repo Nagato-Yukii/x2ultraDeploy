@@ -1,0 +1,74 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"tbb_install_target"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/tbb-src/cmake/utils.cmake",
+			"build/cp311-cp311-linux_x86_64/_deps/tbb-src/src/tbbmalloc/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "runtime",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"gnu_11.4_cxx20_64_release/libtbbmalloc.so.2.13",
+				"gnu_11.4_cxx20_64_release/libtbbmalloc.so.2"
+			],
+			"targetId" : "tbbmalloc::@f722168f853600a96898",
+			"targetIndex" : 72,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "devel",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"gnu_11.4_cxx20_64_release/libtbbmalloc.so"
+			],
+			"targetId" : "tbbmalloc::@f722168f853600a96898",
+			"targetIndex" : 72,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/tbb-build/src/tbbmalloc",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/tbb-src/src/tbbmalloc"
+	}
+}

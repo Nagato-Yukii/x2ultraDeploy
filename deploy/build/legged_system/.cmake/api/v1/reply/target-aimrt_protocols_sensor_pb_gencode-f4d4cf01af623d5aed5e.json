@@ -1,0 +1,293 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/aimrt-build/src/protocols/pb/sensor/libaimrt_protocols_sensor_pb_gencode.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_protobuf_gencode_target_for_proto_path",
+			"install",
+			"target_link_libraries",
+			"add_compile_options",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/cmake/ProtobufGenCode.cmake",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/pb/sensor/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 55,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 61,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 1
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 57,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -fPIC"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/protobuf-src/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/common"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/geometry"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "libprotobuf::@ae0d5a95a4776c73bb4e"
+		},
+		{
+			"id" : "protoc::@ae0d5a95a4776c73bb4e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "aimrt_protocols_common_pb_gencode::@4811e7034a7b9d0d3d71"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "aimrt_protocols_geometry_pb_gencode::@62c9c14ce0aa455e845a"
+		}
+	],
+	"id" : "aimrt_protocols_sensor_pb_gencode::@d9cb0810010bda445e7d",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 3,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/legged_system"
+		}
+	},
+	"name" : "aimrt_protocols_sensor_pb_gencode",
+	"nameOnDisk" : "libaimrt_protocols_sensor_pb_gencode.a",
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/protocols/pb/sensor",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/pb/sensor"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				4,
+				5,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10,
+				11
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 8,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/image.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 8,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/imu.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 8,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/joint_state.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 8,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/touch_sensor_state.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/image.pb.cc.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/imu.pb.cc.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/joint_state.pb.cc.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/touch_sensor_state.pb.cc.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 7,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/image.pb.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 7,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/imu.pb.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 7,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/joint_state.pb.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 7,
+			"isGenerated" : true,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/touch_sensor_state.pb.h",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

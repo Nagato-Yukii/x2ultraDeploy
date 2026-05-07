@@ -1,0 +1,57 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 38,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/aimrt/aimrt_core_plugin_interface",
+			"fileSetDirectories" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface"
+			],
+			"fileSetName" : "HEADERS",
+			"fileSetTarget" : 
+			{
+				"id" : "aimrt_interface_aimrt_core_plugin_interface::@986e7836e2d58eed17ce",
+				"index" : 0
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/aimrt_core_plugin_base.h",
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/aimrt_core_plugin_export.h",
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/aimrt_core_plugin_interface.h",
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/aimrt_core_plugin_main.h"
+			],
+			"type" : "fileSet"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/interface/aimrt_core_plugin_interface",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface"
+	}
+}

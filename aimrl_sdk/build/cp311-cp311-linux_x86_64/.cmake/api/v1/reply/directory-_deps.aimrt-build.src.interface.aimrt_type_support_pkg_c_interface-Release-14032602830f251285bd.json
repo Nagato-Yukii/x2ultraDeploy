@@ -1,0 +1,56 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/aimrt/aimrt_type_support_pkg_c_interface",
+			"fileSetDirectories" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface"
+			],
+			"fileSetName" : "HEADERS",
+			"fileSetTarget" : 
+			{
+				"id" : "aimrt_interface_aimrt_type_support_pkg_c_interface::@b48033efa2b57391135a",
+				"index" : 0
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface/aimrt_type_support_pkg_c_interface.h",
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface/type_support_pkg_export.h",
+				"build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface/type_support_pkg_main.h"
+			],
+			"type" : "fileSet"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/interface/aimrt_type_support_pkg_c_interface",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/aimrt-src/src/interface/aimrt_type_support_pkg_c_interface"
+	}
+}

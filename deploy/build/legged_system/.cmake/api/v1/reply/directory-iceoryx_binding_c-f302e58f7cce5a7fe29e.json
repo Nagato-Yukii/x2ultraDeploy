@@ -1,0 +1,150 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"iox_add_library",
+			"install_target_directories_and_header",
+			"setup_install_directories_and_export_package",
+			"install_package_files_and_export"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPackageHelper.cmake",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_binding_c/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 376,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 391,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 4
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 108,
+				"parent" : 7
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 114,
+				"parent" : 7
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "dev",
+			"destination" : "share/doc/iceoryx_binding_c",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_binding_c/LICENSE"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "bin",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"iceoryx_binding_c/libiceoryx_binding_c.a"
+			],
+			"targetId" : "iceoryx_binding_c::@a916891d12323295354a",
+			"targetIndex" : 39,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "dev",
+			"destination" : "include/iceoryx/v0.1.0",
+			"paths" : 
+			[
+				{
+					"from" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_binding_c/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_binding_c",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/iceoryx_binding_c/iceoryx_binding_cConfigVersion.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/iceoryx_binding_c/iceoryx_binding_cConfig.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_binding_c",
+			"exportName" : "iceoryx_binding_cTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "iceoryx_binding_c::@a916891d12323295354a",
+					"index" : 39
+				}
+			],
+			"paths" : 
+			[
+				"iceoryx_binding_c/CMakeFiles/Export/3e9c5b8862e6aea20f48e1e74ce20d2b/iceoryx_binding_cTargets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "iceoryx_binding_c",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_binding_c"
+	}
+}

@@ -1,0 +1,103 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/pb/sensor/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 49,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "share",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/pb/sensor"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/aimrt-build/src/protocols/pb/sensor/libaimrt_protocols_sensor_pb_gencode.a"
+			],
+			"targetId" : "aimrt_protocols_sensor_pb_gencode::@d9cb0810010bda445e7d",
+			"targetIndex" : 26,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/aimrt_protocols_sensor_pb_gencode",
+			"fileSetDirectories" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor"
+			],
+			"fileSetName" : "HEADERS",
+			"fileSetTarget" : 
+			{
+				"id" : "aimrt_protocols_sensor_pb_gencode::@d9cb0810010bda445e7d",
+				"index" : 26
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/image.pb.h",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/imu.pb.h",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/joint_state.pb.h",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/pb/sensor/touch_sensor_state.pb.h"
+			],
+			"type" : "fileSet"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"_deps/aimrt-build/src/protocols/pb/sensor/libsensor_pb_ts.so"
+			],
+			"targetId" : "aimrt_protocols_sensor_ts::@d9cb0810010bda445e7d",
+			"targetIndex" : 27,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/protocols/pb/sensor",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/protocols/pb/sensor"
+	}
+}

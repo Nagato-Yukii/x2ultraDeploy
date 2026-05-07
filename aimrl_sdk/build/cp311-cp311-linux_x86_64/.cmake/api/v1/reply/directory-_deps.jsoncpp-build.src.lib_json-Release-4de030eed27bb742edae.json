@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 199,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/jsoncpp-build/src/lib_json/libjsoncpp.a"
+			],
+			"targetId" : "jsoncpp_static::@73fdddb0eb7ed205e753",
+			"targetIndex" : 51,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/jsoncpp-build/src/lib_json",
+		"source" : "build/cp311-cp311-linux_x86_64/_deps/jsoncpp-src/src/lib_json"
+	}
+}

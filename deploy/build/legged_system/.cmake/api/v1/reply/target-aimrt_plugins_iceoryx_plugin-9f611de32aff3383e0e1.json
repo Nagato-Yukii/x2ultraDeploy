@@ -1,0 +1,650 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/aimrt-build/src/plugins/iceoryx_plugin/libaimrt_iceoryx_plugin.so"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"target_link_libraries",
+			"iox_add_library",
+			"add_compile_options",
+			"target_compile_options",
+			"add_werror",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/runtime/core/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_module_cpp_interface/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPackageHelper.cmake",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_posh/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-src/source/CMakeLists.txt",
+			"CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/cmake/AddWerror.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 38,
+				"parent" : 4
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 51,
+				"parent" : 6
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 4,
+				"line" : 74,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 339,
+				"parent" : 9
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 41,
+				"parent" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 339,
+				"parent" : 12
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 84,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 339,
+				"parent" : 15
+			},
+			{
+				"file" : 7
+			},
+			{
+				"command" : 2,
+				"file" : 7,
+				"line" : 31,
+				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 343,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 343,
+				"parent" : 9
+			},
+			{
+				"file" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 8,
+				"line" : 8,
+				"parent" : 21
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 9,
+				"line" : 7,
+				"parent" : 23
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -fPIC -fPIC"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Wno-implicit-fallthrough"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Wno-maybe-uninitialized"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Wno-stringop-overflow"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-Werror"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "AIMRT_CONTEXT_DEFINE_GLOBAL_LOGGER_HANDLE"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "AIMRT_RUNTIME_VERSION=\"1.4.0\""
+				},
+				{
+					"backtrace" : 3,
+					"define" : "AIMRT_USE_FMT_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ASIO_NO_DEPRECATED"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ASIO_STANDALONE"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "FMT_HEADER_ONLY=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_CPP_STATIC_DEFINE"
+				},
+				{
+					"define" : "aimrt_plugins_iceoryx_plugin_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 25,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_core_plugin_interface"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/runtime/core"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/runtime/core/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/asio-src/asio/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/yaml-cpp-src/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/tbb-src/src/tbb/../../include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_module_cpp_interface/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_module_cpp_interface"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/common/util/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/common/util"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/fmt-src/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_module_c_interface/.."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/interface/aimrt_module_c_interface"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-src/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/libunifex-build/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_posh/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_posh/experimental/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/generated/iceoryx_posh/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/buffer/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/cli/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/concurrent/buffer/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/concurrent/sync/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/container/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/design/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/filesystem/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/functional/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/memory/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/primitives/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/reporting/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/time/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/utility/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/vocabulary/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/auth/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/design/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/ipc/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/filesystem/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/sync/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/time/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/utility/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/posix/vocabulary/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/generated/iceoryx_hoofs/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_hoofs/legacy/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/generic/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/linux/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/generated/iceoryx_platform/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "unifex::@d26759848343cffdd544"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "yaml-cpp::@c1fb6b535d5396bcd0b2"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "tbb::@5a320f633ce3adaa3ee6"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "iceoryx_platform::@06522778d3acbe1b37c9"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "iceoryx_hoofs::@423a73ee89bf6c350968"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "iceoryx_posh::@1c431d0e5d0fbe501368"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "aimrt_runtime_core::@1992b9af9c703667c2ee"
+		}
+	],
+	"id" : "aimrt_plugins_iceoryx_plugin::@ecfcd6cc3bdc0a9a7ddc",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "bin"
+			},
+			{
+				"backtrace" : 2,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/install/legged_system"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/gnu_11.4_cxx20_64_release:",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "../../runtime/core/libaimrt_runtime_core.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "../../../../../posh/libiceoryx_posh.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "../../../../yaml-cpp-build/libyaml-cpp.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "../../../../../gnu_11.4_cxx20_64_release/libtbb.so.12.13",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "../../../../libunifex-build/source/libunifex.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "../../../../../hoofs/libiceoryx_hoofs.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "../../../../../platform/libiceoryx_platform.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "-lacl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 18,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "-latomic",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 20,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "aimrt_plugins_iceoryx_plugin",
+	"nameOnDisk" : "libaimrt_iceoryx_plugin.so",
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/plugins/iceoryx_plugin",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/global.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/iceoryx_channel_backend.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/iceoryx_manager.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/iceoryx_plugin.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"path" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-src/src/plugins/iceoryx_plugin/iceroyx_plugin_main.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

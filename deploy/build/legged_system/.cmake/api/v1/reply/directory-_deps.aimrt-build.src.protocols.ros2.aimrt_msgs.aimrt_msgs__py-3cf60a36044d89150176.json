@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/aimrt-build/src/protocols/ros2/aimrt_msgs/aimrt_msgs__py",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/aimrt-build/src/protocols/ros2/aimrt_msgs/aimrt_msgs__py"
+	}
+}

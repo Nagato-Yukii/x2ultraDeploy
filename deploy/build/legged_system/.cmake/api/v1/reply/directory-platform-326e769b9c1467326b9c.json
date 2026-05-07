@@ -1,0 +1,218 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"include",
+			"iox_add_library",
+			"install_target_directories_and_header",
+			"setup_install_directories_and_export_package",
+			"install_package_files_and_export"
+		],
+		"files" : 
+		[
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/iceoryxversions.cmake",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/CMakeLists.txt",
+			"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPackageHelper.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 56,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 84,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 376,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 391,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 71,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 87,
+				"parent" : 7
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 96,
+				"parent" : 7
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 75,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 108,
+				"parent" : 10
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 114,
+				"parent" : 10
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 107,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 113,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 3,
+			"component" : "dev",
+			"destination" : "include/iceoryx/v0.1.0",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/generated/iceoryx_platform/include/iceoryx_versions.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "dev",
+			"destination" : "share/doc/iceoryx_platform",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/LICENSE"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "bin",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"platform/libiceoryx_platform.a"
+			],
+			"targetId" : "iceoryx_platform::@06522778d3acbe1b37c9",
+			"targetIndex" : 42,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "dev",
+			"destination" : "include/iceoryx/v0.1.0",
+			"paths" : 
+			[
+				{
+					"from" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/generic/include",
+					"to" : "."
+				},
+				{
+					"from" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/linux/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_platform",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/platform/iceoryx_platformConfigVersion.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/platform/iceoryx_platformConfig.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 12,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/iceoryx_platform",
+			"exportName" : "iceoryx_platformTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "iceoryx_platform::@06522778d3acbe1b37c9",
+					"index" : 42
+				}
+			],
+			"paths" : 
+			[
+				"platform/CMakeFiles/Export/36eaa3bf62e0ee6534919202822a9994/iceoryx_platformTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 13,
+			"component" : "dev",
+			"destination" : "include/iceoryx/v0.1.0/iceoryx_platform",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/generated/iceoryx_platform/include/iceoryx_platform/platform_settings.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 14,
+			"component" : "dev",
+			"destination" : "lib/cmake/iceoryx_platform",
+			"paths" : 
+			[
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxConfigureOptionMacro.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPackageHelper.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxPlatform.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/cmake/IceoryxVersion.cmake",
+				"/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform/linux/cmake/IceoryxPlatformSettings.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "platform",
+		"source" : "/home/suzumiyaharuhi/rl_deploy_v2/deploy/build/legged_system/_deps/iceoryx-src/iceoryx_platform"
+	}
+}

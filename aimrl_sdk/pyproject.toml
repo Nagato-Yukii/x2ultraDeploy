@@ -3,7 +3,7 @@ name = "aimrl_sdk"
 version = "0.2.0"
 description = "AIMRL C++ SDK Python bindings via pybind11"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = "==3.10.12"
 classifiers = [
     "Operating System :: POSIX :: Linux",
 ]

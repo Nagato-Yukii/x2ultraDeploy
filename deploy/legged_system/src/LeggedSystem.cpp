@@ -819,3 +819,4 @@ hardware_interface::return_type LeggedSystemHardware::write(const rclcpp::Time& 
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(legged::LeggedSystemHardware, hardware_interface::SystemInterface)
+

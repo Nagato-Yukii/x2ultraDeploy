@@ -290,3 +290,4 @@ class LeggedSystemHardware : public hardware_interface::SystemInterface {
 };
 
 }  // namespace legged
+

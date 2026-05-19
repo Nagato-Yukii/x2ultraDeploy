@@ -1,6 +1,8 @@
 # RL_Deploy_aimdkv9
 - [该仓库由此仓库适配灵犀X2机器人得到，原仓库链接由此去](https://github.com/Link-U-OS/rl_deploy.git)
 
+- lx2501_3-v0.9.0.4来自灵犀官方文档
+  
 - 第一次开始
     - 编译lxsdkv9
         

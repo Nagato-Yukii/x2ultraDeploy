@@ -1,10 +1,16 @@
 #include <rl_controllers/RLControllerBase.h>
 #include <rl_controllers/RotationTools.h>
 #include <rl_controllers/Utilities.h>
+#include <algorithm>
 #include <cctype>
+#include <cmath>
 
 namespace {
 constexpr double kDeltaPosThreshold = 0.05;
+constexpr double kStandDirectDeadband = 0.03;
+constexpr double kMaxCmdVx = 0.5;
+constexpr double kMaxCmdVy = 1.0;
+constexpr double kMaxCmdYaw = 0.5;
 
 double getGainOrDefault(const std::map<std::string, float> &gains, const std::string &jointName) {
   const auto it = gains.find(jointName);
@@ -74,6 +80,7 @@ controller_interface::CallbackReturn RLControllerBase::on_init() {
   standJointAngles_.resize(actuatedDofNum_);
   lieJointAngles_.resize(actuatedDofNum_);
   allJointPos_.resize(actuatedDofNum_);
+  standHoldRefAngles_.resize(actuatedDofNum_);
 
   auto &StandState = standJointState;
   auto &LieState = lieJointState;
@@ -344,12 +351,22 @@ void RLControllerBase::starting() {
   for (size_t i = 0; i < hybridJointHandles_.size(); i++) {
     currentJointAngles_[i] = hybridJointHandles_[i]->getPosCurr(); // 开始时强行刷新内部状态为机器人posCurr
   }
+  resetStandHoldReference();
 
   scalar_t durationSecs = 2.0;
   standDuration_ = durationSecs * 1000.0;
   standPercent_ = 0;
   mode_ = Mode::DEFAULT;
   loopCount_ = 0;
+}
+
+void RLControllerBase::resetStandHoldReference() {
+  standHoldRefAngles_.resize(actuatedDofNum_);
+
+  for (int i = 0; i < actuatedDofNum_; ++i) {
+    const bool hasMeasuredPosition = i < allJointPos_.size() && std::isfinite(allJointPos_(i));
+    standHoldRefAngles_(i) = hasMeasuredPosition ? allJointPos_(i) : standJointAngles_(i);
+  }
 }
 
 controller_interface::return_type RLControllerBase::update(
@@ -449,6 +466,50 @@ void RLControllerBase::holdJointsAtStand(const std::vector<int> &indices)
                                        ? std::min(targetPosition, allJointPos_(idx) + kDeltaPosThreshold)
                                        : std::max(targetPosition, allJointPos_(idx) - kDeltaPosThreshold);
     hybridJointHandles_[idx]->setCommand(clamped_ref_pos, 0, stiffness, damping, 0);
+  }
+}
+
+void RLControllerBase::holdJointsAtStandDirect(const std::vector<int> &indices)
+{
+  const int jointCount = static_cast<int>(hybridJointHandles_.size());
+
+  for (int idx : indices) {
+    if (idx < 0 || idx >= jointCount || idx >= standJointAngles_.size()) {
+      continue;
+    }
+
+    const std::string &partName = jointNames[idx];
+    const double stiffness = getGainOrDefault(robotCfg_.controlCfg.stiffness, partName);
+    const double damping = getGainOrDefault(robotCfg_.controlCfg.damping, partName);
+    hybridJointHandles_[idx]->setCommand(standJointAngles_[idx], 0, stiffness, damping, 0);
+  }
+}
+
+void RLControllerBase::holdJointsAtStandWithDeadband(const std::vector<int> &indices)
+{
+  const int jointCount = static_cast<int>(hybridJointHandles_.size());
+  if (standHoldRefAngles_.size() != standJointAngles_.size()) {
+    resetStandHoldReference();
+  }
+
+  for (int idx : indices) {
+    if (idx < 0 || idx >= jointCount || idx >= standJointAngles_.size() || idx >= standHoldRefAngles_.size()) {
+      continue;
+    }
+
+    const std::string &partName = jointNames[idx];
+    const double stiffness = getGainOrDefault(robotCfg_.controlCfg.stiffness, partName);
+    const double damping = getGainOrDefault(robotCfg_.controlCfg.damping, partName);
+    const double targetPosition = standJointAngles_[idx];
+    const double currentRefPosition =
+        std::isfinite(standHoldRefAngles_(idx)) ? standHoldRefAngles_(idx) : targetPosition;
+    const double delta_pos = targetPosition - currentRefPosition;
+
+    const double ref_pos = std::abs(delta_pos) <= kStandDirectDeadband
+                               ? targetPosition
+                               : currentRefPosition + std::clamp(delta_pos, -kDeltaPosThreshold, kDeltaPosThreshold);
+    standHoldRefAngles_(idx) = ref_pos;
+    hybridJointHandles_[idx]->setCommand(ref_pos, 0, stiffness, damping, 0);
   }
 }
 
@@ -592,9 +653,9 @@ void RLControllerBase::updateStateEstimation(const rclcpp::Time &time, const rcl
 }
 
 void RLControllerBase::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
-  command_.x = msg->linear.x;
-  command_.y = msg->linear.y;
-  command_.yaw = msg->angular.z;
+  command_.x = std::clamp(static_cast<double>(msg->linear.x), -kMaxCmdVx, kMaxCmdVx);
+  command_.y = std::clamp(static_cast<double>(msg->linear.y), -kMaxCmdVy, kMaxCmdVy);
+  command_.yaw = std::clamp(static_cast<double>(msg->angular.z), -kMaxCmdYaw, kMaxCmdYaw);
 }
 
 void RLControllerBase::joyInfoCallback(const sensor_msgs::msg::Joy::SharedPtr msg) {

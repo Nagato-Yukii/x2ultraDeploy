@@ -12,6 +12,15 @@ import signal
 import sys
 
 
+MAX_VX = 0.5
+MAX_VY = 1.0
+MAX_W = 0.5
+
+
+def clamp(value, min_value, max_value):
+    return max(min_value, min(max_value, value))
+
+
 class JoyInterface(Node):
     def __init__(self):
         super().__init__("joy_interface")
@@ -56,11 +65,16 @@ class JoyInterface(Node):
         self.joystick_radius = 60  # Joystick radius
         self.joystick_handle_size = 15  # Joystick handle size
 
+        self.cmd_vel_publish_period_s = 0.05
+
         # Create GUI interface
         self.setup_gui()
 
         # Timer, publish joy message every 100ms
         self.timer = self.create_timer(0.1, self.publish_joy)
+        self.cmd_vel_timer = self.create_timer(
+            self.cmd_vel_publish_period_s, self.publish_current_cmd_vel
+        )
 
         # Setup signal handler for Ctrl+C
         signal.signal(signal.SIGINT, self.signal_handler)
@@ -120,9 +134,9 @@ class JoyInterface(Node):
         # Bind close event
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-        # Bind keyboard events
-        self.root.bind("<KeyPress>", self.on_key_press)
-        self.root.bind("<KeyRelease>", self.on_key_release)
+        # Bind keyboard events globally so focus on buttons/canvas does not swallow arrow keys.
+        self.root.bind_all("<KeyPress>", self.on_key_press)
+        self.root.bind_all("<KeyRelease>", self.on_key_release)
 
         # Set focus to ensure keyboard events can be received
         self.root.focus_set()
@@ -247,7 +261,7 @@ class JoyInterface(Node):
         self.left_move_btn = tk.Button(
             z_buttons_frame,
             text="Left Move",
-            command=lambda: self.set_z_axis(-0.5),
+            command=lambda: self.set_z_axis(-1.0),
             bg="#FF9800",
             fg="white",
             width=8,
@@ -269,12 +283,28 @@ class JoyInterface(Node):
         self.right_move_btn = tk.Button(
             z_buttons_frame,
             text="Right Move",
-            command=lambda: self.set_z_axis(0.5),
+            command=lambda: self.set_z_axis(1.0),
             bg="#FF9800",
             fg="white",
             width=8,
         )
         self.right_move_btn.pack(side="left", padx=5)
+
+        self.side_move_scale = tk.Scale(
+            z_control_frame,
+            from_=-1.0,
+            to=1.0,
+            resolution=0.01,
+            orient="horizontal",
+            length=260,
+            command=self.on_side_move_scale,
+            bg="#f0f0f0",
+            fg="#333333",
+            troughcolor="#dddddd",
+            highlightthickness=0,
+        )
+        self.side_move_scale.set(0.0)
+        self.side_move_scale.pack(pady=(8, 0))
 
         # Left/Right movement value display
         self.z_axis_label = tk.Label(
@@ -288,13 +318,18 @@ class JoyInterface(Node):
 
     def set_z_axis(self, value):
         """Set left/right movement value (axes[3])"""
-        self.joy_msg.axes[3] = value
-        self.z_axis_label.config(text=f"{value:.3f}")
-        self.get_logger().info(f"Left/Right movement set to: {value:.3f}")
+        axis_value = clamp(value, -1.0, 1.0)
+        self.joy_msg.axes[3] = axis_value
+        if hasattr(self, "side_move_scale"):
+            self.side_move_scale.set(axis_value)
+        self.z_axis_label.config(text=f"{axis_value:.3f}")
+        self.get_logger().info(f"Left/Right movement set to: {axis_value:.3f}")
 
-        # Update cmd_vel message
-        if self.joy_msg.buttons[4] == 1:  # Deadman button
-            self.update_cmd_vel()
+    def on_side_move_scale(self, value):
+        """Continuously set left/right movement from the slider."""
+        axis_value = clamp(float(value), -1.0, 1.0)
+        self.joy_msg.axes[3] = axis_value
+        self.z_axis_label.config(text=f"{axis_value:.3f}")
 
     def handle_button_function(self, button_id, pressed):
         """Handle button functionality"""
@@ -389,21 +424,18 @@ class JoyInterface(Node):
 
     def update_cmd_vel(self):
         """Update and publish cmd_vel message"""
-        # According to scaling parameters configured in joy.yaml
-        # Axis mapping relationship (Y-axis and Z-axis are swapped):
-        # axes[1] -> linear.x (forward/backward) - joystick X-axis movement
-        # axes[3] -> linear.y (left/right movement) - button control (original Z-axis function)
-        # axes[0] -> angular.z (left/right turn) - joystick Y-axis movement (original Y-axis function)
-        self.cmd_vel_msg.linear.x = self.joy_msg.axes[1] * 2.4  # Forward/Backward
-        self.cmd_vel_msg.linear.y = (
-            self.joy_msg.axes[3] * 1.5
-        )  # Left/Right movement (button)
-        self.cmd_vel_msg.angular.z = (
-            self.joy_msg.axes[0] * 1.0
-        )  # Left/Right turn (joystick Y-axis)
+        # axes are normalized [-1, 1]; clamp here for the GUI and again in the controller.
+        self.cmd_vel_msg.linear.x = clamp(self.joy_msg.axes[1] * MAX_VX, -MAX_VX, MAX_VX)
+        self.cmd_vel_msg.linear.y = clamp(self.joy_msg.axes[3] * MAX_VY, -MAX_VY, MAX_VY)
+        self.cmd_vel_msg.angular.z = clamp(self.joy_msg.axes[0] * MAX_W, -MAX_W, MAX_W)
 
         # Publish cmd_vel message
         self.cmd_vel_pub.publish(self.cmd_vel_msg)
+
+    def publish_current_cmd_vel(self):
+        """Continuously publish the current GUI command while any movement axis is non-zero."""
+        if any(abs(self.joy_msg.axes[i]) > 1e-6 for i in (0, 1, 3)):
+            self.update_cmd_vel()
 
     def reset_joystick_position(self):
         """Auto-center joystick to center position"""
@@ -542,9 +574,7 @@ class JoyInterface(Node):
         self.joy_msg.axes[x_axis] = x_value
         self.joy_msg.axes[y_axis] = y_value
 
-        # Directly publish cmd_vel message (if deadman button is pressed)
-        if self.joy_msg.buttons[4] == 1:  # Deadman button
-            self.update_cmd_vel()
+        self.update_cmd_vel()
 
     def on_joystick_release(self, x_axis, y_axis):
         """Joystick release event"""
@@ -561,10 +591,6 @@ class JoyInterface(Node):
     def on_key_press(self, event):
         """Keyboard press event"""
         key = event.keysym.lower()
-
-        # Check if deadman button is activated
-        if self.joy_msg.buttons[4] != 1:
-            return
 
         # Direction key control
         if key == "up":  # ↑ Forward

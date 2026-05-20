@@ -234,6 +234,9 @@ class RLControllerBase : public controller_interface::ControllerInterface {
   virtual void starting();
   void holdJointsAtZero(const std::vector<int>& indices);
   void holdJointsAtStand(const std::vector<int>& indices);
+  void holdJointsAtStandDirect(const std::vector<int>& indices);
+  void holdJointsAtStandWithDeadband(const std::vector<int>& indices);
+  void resetStandHoldReference();
 
  protected:
   //void configureStartupMode();
@@ -394,6 +397,10 @@ class RLControllerBase : public controller_interface::ControllerInterface {
                                           15, 16, 17, 18, 19, 20, 21,  // left arm
                                           22, 23, 24, 25, 26, 27, 28,  // right arm
                                           29, 30};              // head
+  std::vector<int> waist_joint_mapping = {12, 13, 14};
+  std::vector<int> arm_head_joint_mapping = {15, 16, 17, 18, 19, 20, 21,
+                                             22, 23, 24, 25, 26, 27, 28,
+                                             29, 30};
   std::vector<int> arm_joint_mapping   = {};  // handled via joint_mapping_fixed,预留动作eg.正弦摆臂
 
  private:
@@ -402,6 +409,7 @@ class RLControllerBase : public controller_interface::ControllerInterface {
   std::vector<scalar_t> initJointAngles_;
   vector_t standJointAngles_;
   vector_t lieJointAngles_;
+  vector_t standHoldRefAngles_;
   //vector_t sitJointAngles_;
 
   scalar_t standPercent_;

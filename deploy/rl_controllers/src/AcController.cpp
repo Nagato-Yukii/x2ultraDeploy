@@ -25,7 +25,8 @@ void AcController::handleWalkMode() {
         const double damping = robotCfg_.controlCfg.damping.at(partName);
         hybridJointHandles_[jointIndex]->setCommand(defaultJointAngles_(jointIndex), 0, stiffness, damping, 0);
       }
-      holdJointsAtStand(joint_mapping_fixed);
+      holdJointsAtStandWithDeadband(waist_joint_mapping);
+      holdJointsAtStand(arm_head_joint_mapping);
       return;
     }
 
@@ -70,10 +71,12 @@ void AcController::handleWalkMode() {
     hybridJointHandles_[idx]->setCommand(defaultJointAngles_(idx), 0, kp, kd, 0);
   }
     */
-  holdJointsAtStand(joint_mapping_fixed);
+  holdJointsAtStandWithDeadband(waist_joint_mapping);
+  holdJointsAtStand(arm_head_joint_mapping);
 }
 
 void AcController::onEnterWalk() {
+  resetStandHoldReference();
   pendingWalkColdStart_ = true;
 }
 

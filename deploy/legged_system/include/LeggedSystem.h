@@ -108,41 +108,75 @@ class LeggedSystemHardware : public hardware_interface::SystemInterface {
 
   void aimrtInit();
   void imuCallback(const std::shared_ptr<const sensor_msgs::msg::Imu>& msg){
-    bodyDriveIMU_ = *msg;
-    publishImuTransform(bodyDriveIMU_);
+    sensor_msgs::msg::Imu imu_msg;
+    {
+      std::scoped_lock lock(motor_mtx_);
+      bodyDriveIMU_ = *msg;
+      imu_msg = bodyDriveIMU_;
+    }
+    publishImuTransform(imu_msg);
   }
 
   // 生成sample(含时间戳,pos,vel,tau)并做PushSample()入时序缓冲
   void legStateCallback(const std::shared_ptr<const aimdk_msgs::msg::JointStateArray>& msg)
   {
-    for(int i = 0 ; i < kLegDof ; i++){
-      bodyDriveJointData_[i].pos_ = msg->joints[i].position;
-      bodyDriveJointData_[i].vel_ = msg->joints[i].velocity;
-      bodyDriveJointData_[i].tau_ = msg->joints[i].effort;
+    if (msg->joints.size() < kLegDof) {
+      RCLCPP_WARN_THROTTLE(rclcpp::get_logger("LeggedSystemHardware"), *node_->get_clock(), 1000,
+                           "Ignore short leg state: %zu joints", msg->joints.size());
+      return;
+    }
+    std::scoped_lock lock(motor_mtx_);
+    for(size_t i = 0 ; i < kLegDof ; i++){
+      //msg->joints的长度和bodyDriveJointData_不同，后者是几个msg的joints的长度的和，fix:越界读
+      //原来是bodyDriveJointData_[i].pos_ = msg->joints[i].position;
+      bodyDriveJointData_[i].pos_ = static_cast<float>(msg->joints[i].position);
+      bodyDriveJointData_[i].vel_ = static_cast<float>(msg->joints[i].velocity);
+      bodyDriveJointData_[i].tau_ = static_cast<float>(msg->joints[i].effort); 
     }
   }
   void waistStateCallback(const std::shared_ptr<const aimdk_msgs::msg::JointStateArray>& msg){
-    for(int i = kLegDof ; i < kLegDof + kWaistDof ; i++){
-      bodyDriveJointData_[i].pos_ = msg->joints[i].position;
-      bodyDriveJointData_[i].vel_ = msg->joints[i].velocity;
-      bodyDriveJointData_[i].tau_ = msg->joints[i].effort;
+    if (msg->joints.size() < kWaistDof) {
+      RCLCPP_WARN_THROTTLE(rclcpp::get_logger("LeggedSystemHardware"), *node_->get_clock(), 1000,
+                           "Ignore short waist state: %zu joints", msg->joints.size());
+      return;
+    }
+    std::scoped_lock lock(motor_mtx_);
+    for(size_t i = 0 ; i < kWaistDof ; i++){
+      const size_t dst = kLegDof + i;
+      bodyDriveJointData_[dst].pos_ = static_cast<float>(msg->joints[i].position);
+      bodyDriveJointData_[dst].vel_ = static_cast<float>(msg->joints[i].velocity);
+      bodyDriveJointData_[dst].tau_ = static_cast<float>(msg->joints[i].effort);
     }
     firstReceiveWaistState = false;
   }
   void armStateCallback(const std::shared_ptr<const aimdk_msgs::msg::JointStateArray>& msg){
-    for(int i = kLegDof + kWaistDof ; i < kLegDof + kWaistDof + kArmDof ; i++){
-      bodyDriveJointData_[i].pos_ = msg->joints[i].position;
-      bodyDriveJointData_[i].vel_ = msg->joints[i].velocity;
-      bodyDriveJointData_[i].tau_ = msg->joints[i].effort;
+    if (msg->joints.size() < kArmDof) {
+      RCLCPP_WARN_THROTTLE(rclcpp::get_logger("LeggedSystemHardware"), *node_->get_clock(), 1000,
+                           "Ignore short arm state: %zu joints", msg->joints.size());
+      return;
+    }
+    std::scoped_lock lock(motor_mtx_);
+    for(size_t i = 0 ; i < kArmDof ; i++){
+      const size_t dst = kLegDof + kWaistDof + i;
+      bodyDriveJointData_[dst].pos_ = static_cast<float>(msg->joints[i].position);
+      bodyDriveJointData_[dst].vel_ = static_cast<float>(msg->joints[i].velocity);
+      bodyDriveJointData_[dst].tau_ = static_cast<float>(msg->joints[i].effort);
     }
     firstReceiveArmState = false;
   }
 
   void headStateCallback(const std::shared_ptr<const aimdk_msgs::msg::JointStateArray>& msg){
-    for(int i = kLegDof + kWaistDof + kArmDof ; i < kLegDof + kWaistDof + kArmDof + kHeadDof ; i++){
-      bodyDriveJointData_[i].pos_ = msg->joints[i].position;
-      bodyDriveJointData_[i].vel_ = msg->joints[i].velocity;
-      bodyDriveJointData_[i].tau_ = msg->joints[i].effort;
+    if (msg->joints.size() < kHeadDof) {
+      RCLCPP_WARN_THROTTLE(rclcpp::get_logger("LeggedSystemHardware"), *node_->get_clock(), 1000,
+                           "Ignore short head state: %zu joints", msg->joints.size());
+      return;
+    }
+    std::scoped_lock lock(motor_mtx_);
+    for(size_t i = 0 ; i < kHeadDof ; i++){
+      const size_t dst = kLegDof + kWaistDof + kArmDof + i;
+      bodyDriveJointData_[dst].pos_ = static_cast<float>(msg->joints[i].position);
+      bodyDriveJointData_[dst].vel_ = static_cast<float>(msg->joints[i].velocity);
+      bodyDriveJointData_[dst].tau_ = static_cast<float>(msg->joints[i].effort);
     }
     firstReceiveHeadState = false;
   }
@@ -290,4 +324,3 @@ class LeggedSystemHardware : public hardware_interface::SystemInterface {
 };
 
 }  // namespace legged
-

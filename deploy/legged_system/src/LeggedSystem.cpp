@@ -187,6 +187,10 @@ Vector<LeggedSystemHardware::kTotalDof> m_q;  // motor position feedback — X2 
 Vector<LeggedSystemHardware::kTotalDof> m_v;  // motor velocity feedback
 Vector<LeggedSystemHardware::kTotalDof> m_t;  // motor torque feedback
 
+double finiteOrDefault(double value, double fallback) {
+  return std::isfinite(value) ? value : fallback;
+}
+
 // processClosedChainState() and processClosedChainCommands() were removed
 
 hardware_interface::CallbackReturn LeggedSystemHardware::on_init(const hardware_interface::HardwareInfo& info) {
@@ -673,10 +677,26 @@ hardware_interface::return_type LeggedSystemHardware::read(const rclcpp::Time& /
     */
 
   // Apply direction sign and zero offset (base_motor all-zero for X2)
-  for (int i = 0; i < LeggedSystemHardware::kTotalDof; i++) {
-    SerialJointData_[i].pos_ = bodyDriveJointData_[i].pos_ * direction_motor[i] + base_motor[i];
-    SerialJointData_[i].vel_ = bodyDriveJointData_[i].vel_ * direction_motor[i];
-    SerialJointData_[i].tau_ = bodyDriveJointData_[i].tau_ * direction_motor[i];
+  {
+    std::scoped_lock lock(motor_mtx_);
+    for (int i = 0; i < LeggedSystemHardware::kTotalDof; i++) {
+      SerialJointData_[i].pos_ = bodyDriveJointData_[i].pos_ * direction_motor[i] + base_motor[i];
+      SerialJointData_[i].vel_ = bodyDriveJointData_[i].vel_ * direction_motor[i];
+      SerialJointData_[i].tau_ = bodyDriveJointData_[i].tau_ * direction_motor[i];
+    }
+
+    imu_orientation_[0] = bodyDriveIMU_.orientation.x;
+    imu_orientation_[1] = bodyDriveIMU_.orientation.y;
+    imu_orientation_[2] = bodyDriveIMU_.orientation.z;
+    imu_orientation_[3] = bodyDriveIMU_.orientation.w;
+
+    imu_angular_velocity_[0] = bodyDriveIMU_.angular_velocity.x;
+    imu_angular_velocity_[1] = bodyDriveIMU_.angular_velocity.y;
+    imu_angular_velocity_[2] = bodyDriveIMU_.angular_velocity.z;
+
+    imu_linear_acceleration_[0] = bodyDriveIMU_.linear_acceleration.x;
+    imu_linear_acceleration_[1] = bodyDriveIMU_.linear_acceleration.y;
+    imu_linear_acceleration_[2] = bodyDriveIMU_.linear_acceleration.z;
   }
 
   for (int i = 0; i < LeggedSystemHardware::kTotalDof; i++) {
@@ -713,19 +733,6 @@ hardware_interface::return_type LeggedSystemHardware::read(const rclcpp::Time& /
     SerialJointData_[i].kd_ = 1.5;
   }
 
-  imu_orientation_[0] = bodyDriveIMU_.orientation.x;
-  imu_orientation_[1] = bodyDriveIMU_.orientation.y;
-  imu_orientation_[2] = bodyDriveIMU_.orientation.z;
-  imu_orientation_[3] = bodyDriveIMU_.orientation.w;
-
-  imu_angular_velocity_[0] = bodyDriveIMU_.angular_velocity.x;
-  imu_angular_velocity_[1] = bodyDriveIMU_.angular_velocity.y;
-  imu_angular_velocity_[2] = bodyDriveIMU_.angular_velocity.z;
-
-  imu_linear_acceleration_[0] = bodyDriveIMU_.linear_acceleration.x;
-  imu_linear_acceleration_[1] = bodyDriveIMU_.linear_acceleration.y;
-  imu_linear_acceleration_[2] = bodyDriveIMU_.linear_acceleration.z;
-
   return hardware_interface::return_type::OK;
 }
 
@@ -733,11 +740,11 @@ hardware_interface::return_type LeggedSystemHardware::write(const rclcpp::Time& 
                                                             [[maybe_unused]] const rclcpp::Duration& period) {
   // X2: direct position control, no closed-chain ankle torque mode
   for (int i = 0; i < LeggedSystemHardware::kTotalDof; ++i) {
-    writePosDesArray_[i] = SerialJointData_[i].posDes_;
-    writeVelDesArray_[i] = SerialJointData_[i].velDes_;
-    writeFFArray_[i] = SerialJointData_[i].ff_;
-    writeKpArray_[i] = SerialJointData_[i].kp_;
-    writeKdArray_[i] = SerialJointData_[i].kd_;
+    writePosDesArray_[i] = finiteOrDefault(SerialJointData_[i].posDes_, SerialJointData_[i].pos_);
+    writeVelDesArray_[i] = finiteOrDefault(SerialJointData_[i].velDes_, 0.0);
+    writeFFArray_[i] = finiteOrDefault(SerialJointData_[i].ff_, 0.0);
+    writeKpArray_[i] = finiteOrDefault(SerialJointData_[i].kp_, 0.0);
+    writeKdArray_[i] = finiteOrDefault(SerialJointData_[i].kd_, 1.5);
   }
 
   // Fill leg command (indices 0..11, all serial — no ankle special case)
@@ -819,4 +826,3 @@ hardware_interface::return_type LeggedSystemHardware::write(const rclcpp::Time& 
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(legged::LeggedSystemHardware, hardware_interface::SystemInterface)
-

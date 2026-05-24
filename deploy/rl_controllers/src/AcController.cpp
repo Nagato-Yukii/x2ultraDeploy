@@ -7,17 +7,24 @@
 namespace legged {
 
 namespace {
-constexpr double kWalkColdStartPosTolerance = 0.03;
+constexpr double kWalkColdStartPosTolerance = 0.30;
 constexpr double kWalkColdStartVelTolerance = 0.10;
 }
 
 void AcController::handleWalkMode() {
   if (pendingWalkColdStart_) {
-    const bool standPoseReached =
-        ((propri_.jointPos - defaultJointAnglesActuated_).cwiseAbs().maxCoeff() < kWalkColdStartPosTolerance) &&
-        (propri_.jointVel.cwiseAbs().maxCoeff() < kWalkColdStartVelTolerance);
+    const double maxPosError = (propri_.jointPos - defaultJointAnglesActuated_).cwiseAbs().maxCoeff();
+    const double maxVel = propri_.jointVel.cwiseAbs().maxCoeff();
+    const bool posReached = maxPosError < kWalkColdStartPosTolerance;
+    const bool velReached = maxVel < kWalkColdStartVelTolerance;
+    const bool standPoseReached = posReached && velReached;
 
     if (!standPoseReached) {
+      RCLCPP_INFO_THROTTLE(
+          rclcpp::get_logger("rclcpp"), *get_node()->get_clock(), 1000,
+          "Waiting walk cold start: max_pos_error=%.4f rad (limit %.4f, %s), max_vel=%.4f rad/s (limit %.4f, %s)",
+          maxPosError, kWalkColdStartPosTolerance, posReached ? "ok" : "not ok",
+          maxVel, kWalkColdStartVelTolerance, velReached ? "ok" : "not ok");
       for (int i = 0; i < actionsSize_; i++) {
         const int jointIndex = leg_joint_mapping[i];
         const std::string partName = jointNames[jointIndex];

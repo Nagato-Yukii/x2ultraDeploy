@@ -195,4 +195,19 @@
     
     加载环境直接source env.sh,但是预先要更改成自己的路径
 
-
+- 真机部署
+    
+    完成环境配置后，
+    off board:网线连接，配置网卡后10.0.1.2，255.255.255.0后，用其自带运控调整到接近自然站立姿态后，关闭自带运控
+        
+        ```
+        source env.sh
+        cd deploy
+        bash install/deploy_assets/scripts/start_rl_control_real_ros2.sh
+        另起终端
+        source env.sh
+        cd deploy
+        python3 install/deploy_assets/scripts/joy_interface.py
+        操作与仿真相同，暂未支持真实手柄
+        ```
+    这套 ROS2 off-board 通信频率是够的，网线带宽也不是瓶颈。

@@ -63,7 +63,7 @@
     <mesh name="RGB_Forward_link"  file="rgbd_forward_link.STL"/> -->
   </asset>
 
-  <include file="../terrain/mujoco/flat.xml"/>
+  <include file="../terrain/mujoco/stair.xml"/>
 
   <worldbody>
     <body name="pelvis" pos="0 0 0.68" euler="0 0 0" childclass="x2">

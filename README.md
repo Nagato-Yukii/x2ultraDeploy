@@ -191,6 +191,10 @@
         
         ![image.png](RL_Deploy_aimdkv9/image%203.png)
 
+        选中DreamWaq就进入楼梯模式
+
+        ![image.png](RL_Deploy_aimdkv9/x2dwaq_mujoco.png)
+
 - 快速启动
     
     加载环境直接source env.sh,但是预先要更改成自己的路径
@@ -210,4 +214,4 @@
         python3 install/deploy_assets/scripts/joy_interface.py
         操作与仿真相同，暂未支持真实手柄
         ```
-    这套 ROS2 off-board 通信频率是够的，网线带宽也不是瓶颈。
+    这套 ROS2 off-board 通信频率是够的，网线带宽也不是瓶颈,两个模型都可以部署实机。

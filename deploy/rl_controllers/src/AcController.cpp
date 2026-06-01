@@ -7,24 +7,17 @@
 namespace legged {
 
 namespace {
-constexpr double kWalkColdStartPosTolerance = 0.30;
+constexpr double kWalkColdStartPosTolerance = 0.03;
 constexpr double kWalkColdStartVelTolerance = 0.10;
 }
 
 void AcController::handleWalkMode() {
   if (pendingWalkColdStart_) {
-    const double maxPosError = (propri_.jointPos - defaultJointAnglesActuated_).cwiseAbs().maxCoeff();
-    const double maxVel = propri_.jointVel.cwiseAbs().maxCoeff();
-    const bool posReached = maxPosError < kWalkColdStartPosTolerance;
-    const bool velReached = maxVel < kWalkColdStartVelTolerance;
-    const bool standPoseReached = posReached && velReached;
+    const bool standPoseReached =
+        ((propri_.jointPos - defaultJointAnglesActuated_).cwiseAbs().maxCoeff() < kWalkColdStartPosTolerance) &&
+        (propri_.jointVel.cwiseAbs().maxCoeff() < kWalkColdStartVelTolerance);
 
     if (!standPoseReached) {
-      RCLCPP_INFO_THROTTLE(
-          rclcpp::get_logger("rclcpp"), *get_node()->get_clock(), 1000,
-          "Waiting walk cold start: max_pos_error=%.4f rad (limit %.4f, %s), max_vel=%.4f rad/s (limit %.4f, %s)",
-          maxPosError, kWalkColdStartPosTolerance, posReached ? "ok" : "not ok",
-          maxVel, kWalkColdStartVelTolerance, velReached ? "ok" : "not ok");
       for (int i = 0; i < actionsSize_; i++) {
         const int jointIndex = leg_joint_mapping[i];
         const std::string partName = jointNames[jointIndex];
@@ -85,6 +78,23 @@ void AcController::handleWalkMode() {
 void AcController::onEnterWalk() {
   resetStandHoldReference();
   pendingWalkColdStart_ = true;
+}
+
+void AcController::onEnterDreamWaq() {
+  resetStandHoldReference();
+  if (dreamwaq_state_) {
+    dreamwaq_state_->onEnter(get_node()->now());
+  }
+}
+
+void AcController::handleDreamWaqMode() {
+  if (!dreamwaq_state_ || !dreamwaq_state_->enabled()) {
+    RCLCPP_ERROR_STREAM(rclcpp::get_logger("rclcpp"), "DreamWaQ mode requested but DreamWaQCfg.enabled is false or missing.");
+    mode_ = Mode::STAND;
+    return;
+  }
+
+  dreamwaq_state_->step(get_node()->now(), propri_, command_, hybridJointHandles_, jointNames, robotCfg_);
 }
 
 bool AcController::loadModel() {
@@ -257,6 +267,11 @@ bool AcController::loadRLCfg() {
   }
   for (int i = 0; i < actionsSize_; i++) {
     defaultJointAnglesActuated_(i) = defaultJointAngles[leg_joint_mapping[i]];
+  }
+
+  dreamwaq_state_ = std::make_unique<DreamWaqState>();
+  if (!dreamwaq_state_->configure(get_node())) {
+    return false;
   }
 
   return (error == 0);

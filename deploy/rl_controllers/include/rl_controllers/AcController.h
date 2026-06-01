@@ -17,6 +17,7 @@
 // =============================================================================
 #pragma once
 
+#include "rl_controllers/DreamWaqState.h"
 #include "rl_controllers/RLControllerBase.h"
 
 namespace legged {
@@ -41,7 +42,9 @@ class AcController : public RLControllerBase {
   void computeActions() override;
   void computeObservation() override;
   void handleWalkMode() override;
+  void handleDreamWaqMode() override;
   void onEnterWalk() override;
+  void onEnterDreamWaq() override;
   
 
  private:
@@ -72,6 +75,7 @@ class AcController : public RLControllerBase {
   std::vector<tensor_element_t> actions_;
   std::vector<tensor_element_t> observations_;
   Eigen::Matrix<tensor_element_t, Eigen::Dynamic, 1> proprioHistoryBuffer_;
+  std::unique_ptr<DreamWaqState> dreamwaq_state_;
 
   bool isfirstRecObs_{true};
   bool pendingWalkColdStart_{false};

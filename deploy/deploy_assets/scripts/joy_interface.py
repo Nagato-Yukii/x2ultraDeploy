@@ -34,6 +34,7 @@ class JoyInterface(Node):
         self.start_control_pub = self.create_publisher(Float32, "start_control", 10)
         self.switch_mode_pub = self.create_publisher(Float32, "switch_mode", 10)
         self.walk_mode_pub = self.create_publisher(Float32, "walk_mode", 10)
+        self.dreamwaq_mode_pub = self.create_publisher(Float32, "dreamwaq_mode", 10)
         self.position_control_pub = self.create_publisher(
             Float32, "position_control", 10
         )
@@ -41,7 +42,7 @@ class JoyInterface(Node):
         self.joy_msg = Joy()
         self.joy_msg.header.frame_id = "joy_interface"
         self.joy_msg.axes = [0.0] * 8  # 8 axes
-        self.joy_msg.buttons = [0] * 8  # 8 buttons
+        self.joy_msg.buttons = [0] * 9  # 9 buttons
 
         # Initialize control messages
         self.cmd_vel_msg = Twist()
@@ -49,11 +50,13 @@ class JoyInterface(Node):
         self.start_control_msg = Float32()
         self.switch_mode_msg = Float32()
         self.walk_mode_msg = Float32()
+        self.dreamwaq_mode_msg = Float32()
         self.position_control_msg = Float32()
 
         # Control states
         self.control_active = False
         self.walk_mode_active = False
+        self.dreamwaq_mode_active = False
         self.position_control_active = False
         self.mode_switched = False
 
@@ -261,7 +264,7 @@ class JoyInterface(Node):
         self.left_move_btn = tk.Button(
             z_buttons_frame,
             text="Left Move",
-            command=lambda: self.set_z_axis(-1.0),
+            command=lambda: self.set_z_axis(1.0),
             bg="#FF9800",
             fg="white",
             width=8,
@@ -283,7 +286,7 @@ class JoyInterface(Node):
         self.right_move_btn = tk.Button(
             z_buttons_frame,
             text="Right Move",
-            command=lambda: self.set_z_axis(1.0),
+            command=lambda: self.set_z_axis(-1.0),
             bg="#FF9800",
             fg="white",
             width=8,
@@ -309,7 +312,7 @@ class JoyInterface(Node):
         # Left/Right movement value display
         self.z_axis_label = tk.Label(
             z_control_frame,
-            text="0.000",
+             text="0.000",
             bg="#f0f0f0",
             fg="#333333",
             font=("Arial", 10),
@@ -318,7 +321,7 @@ class JoyInterface(Node):
 
     def set_z_axis(self, value):
         """Set left/right movement value (axes[3])"""
-        axis_value = clamp(value, -1.0, 1.0)
+        axis_value = clamp(-value, -1.0, 1.0)
         self.joy_msg.axes[3] = axis_value
         if hasattr(self, "side_move_scale"):
             self.side_move_scale.set(axis_value)
@@ -327,7 +330,7 @@ class JoyInterface(Node):
 
     def on_side_move_scale(self, value):
         """Continuously set left/right movement from the slider."""
-        axis_value = clamp(float(value), -1.0, 1.0)
+        axis_value = clamp(-float(value), -1.0, 1.0)
         self.joy_msg.axes[3] = axis_value
         self.z_axis_label.config(text=f"{axis_value:.3f}")
 
@@ -353,6 +356,11 @@ class JoyInterface(Node):
                 self.activate_start_control()
             else:
                 self.deactivate_start_control()
+        elif button_id == 8:  # DreamWaQ mode
+            if pressed:
+                self.activate_dreamwaq_mode()
+            else:
+                self.deactivate_dreamwaq_mode()
 
     def activate_emergency_stop(self):
         """Activate emergency stop"""
@@ -393,6 +401,20 @@ class JoyInterface(Node):
         self.walk_mode_pub.publish(self.walk_mode_msg)
         self.walk_mode_active = False
         self.get_logger().info("Walk mode released")
+
+    def activate_dreamwaq_mode(self):
+        """Activate DreamWaQ mode"""
+        self.dreamwaq_mode_msg.data = 1.0
+        self.dreamwaq_mode_pub.publish(self.dreamwaq_mode_msg)
+        self.dreamwaq_mode_active = True
+        self.get_logger().info("DreamWaQ mode activated")
+
+    def deactivate_dreamwaq_mode(self):
+        """Release DreamWaQ mode"""
+        self.dreamwaq_mode_msg.data = 0.0
+        self.dreamwaq_mode_pub.publish(self.dreamwaq_mode_msg)
+        self.dreamwaq_mode_active = False
+        self.get_logger().info("DreamWaQ mode released")
 
     def activate_position_control(self):
         """Activate position control mode"""
@@ -477,6 +499,7 @@ class JoyInterface(Node):
             ("Emergency Stop\n(Use with another e-stop)", 5, "#D32F2F"),
             ("Emergency Stop", 6, "#D32F2F"),
             ("Start/Stop Control", 7, "#4CAF50"),
+            ("Enter DreamWaQ Mode", 8, "#00695C"),
         ]
 
         button_grid = tk.Frame(button_frame, bg="#f0f0f0")
@@ -516,7 +539,7 @@ class JoyInterface(Node):
                     "<Button-1>",
                     lambda e, bid=button_id: self.on_deadman_button_click(bid),
                 )
-            elif button_id in [0, 2, 3, 7]:  # Toggle buttons: mode switch, walk mode, position control, start control
+            elif button_id in [0, 2, 3, 7, 8]:  # Toggle buttons: mode switch, walk mode, position control, start control, DreamWaQ
                 # Toggle buttons only use click event (handled by command), no press/release
                 # Remove default command and use click binding to avoid double triggering
                 btn.config(command=None)
@@ -677,7 +700,8 @@ class JoyInterface(Node):
             2,
             3,
             7,
-        ]:  # Mode switch, walk mode, position control, start control
+            8,
+        ]:  # Mode switch, walk mode, position control, start control, DreamWaQ
             current_state = self.joy_msg.buttons[button_id]
             self.joy_msg.buttons[button_id] = 1 if current_state == 0 else 0
             self.get_logger().info(

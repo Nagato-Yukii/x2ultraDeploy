@@ -39,6 +39,7 @@ add_library(
   SHARED
   src/RLControllerBase.cpp
   src/AcController.cpp
+  src/DreamWaqState.cpp
   src/Utilities.cpp
 )
 

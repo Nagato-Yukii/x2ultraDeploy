@@ -224,8 +224,36 @@ controller_interface::CallbackReturn RLControllerBase::on_init() {
   };
   walkModeSub_ = get_node()->create_subscription<std_msgs::msg::Float32>("/walk_mode", 1, walkModeCallback);
 
+  // dreamwaqMode
+  // STAND --> DREAMWAQ
+  auto dreamWaqModeCallback = [this](const std_msgs::msg::Float32::SharedPtr msg) {
+    if (msg && msg->data <= 0.0F) {
+      dreamwaq_mode_latched = false;
+      return;
+    }
+    if (dreamwaq_mode_latched.exchange(true)) {
+      return;
+    }
+
+    rclcpp::Duration t(0, 500000000);
+    auto currentTime = rclcpp::Clock(RCL_ROS_TIME).now();
+    if (currentTime - switchTime > t) {
+      if (mode_ == Mode::STAND) {
+        simResetPublisher_->publish(std_msgs::msg::Empty{});
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "Publish /aima/sim/reset before STAND2DREAMWAQ");
+        loopCount_ = 0;
+        standPercent_ = 0;
+        onEnterDreamWaq();
+        mode_ = Mode::DREAMWAQ;
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "STAND2DREAMWAQ");
+      }
+      switchTime = rclcpp::Clock(RCL_ROS_TIME).now();
+    }
+  };
+  dreamWaqModeSub_ = get_node()->create_subscription<std_msgs::msg::Float32>("/dreamwaq_mode", 1, dreamWaqModeCallback);
+
   // positionMode
-  // WALK --> STAND or DEFAULT --> LIE
+  // WALK/DREAMWAQ --> STAND or DEFAULT --> LIE
   auto positionModeCallback = [this](const std_msgs::msg::Float32::SharedPtr /*msg*/) {
     if (position_control_latched.exchange(true)) {
       return;
@@ -237,6 +265,9 @@ controller_interface::CallbackReturn RLControllerBase::on_init() {
       if (mode_ == Mode::WALK) {
         mode_ = Mode::STAND;
         RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "WALK2STAND");
+      } else if (mode_ == Mode::DREAMWAQ) {
+        mode_ = Mode::STAND;
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "DREAMWAQ2STAND");
       } else if (mode_ == Mode::DEFAULT) {
         standPercent_ = 0;
         for (size_t i = 0; i < hybridJointHandles_.size(); i++) {
@@ -401,6 +432,9 @@ controller_interface::return_type RLControllerBase::update(
       break;
     case Mode::WALK:
       handleWalkMode();
+      break;
+    case Mode::DREAMWAQ:
+      handleDreamWaqMode();
       break;
     default:
       RCLCPP_ERROR_STREAM(rclcpp::get_logger("rclcpp"), "Unexpected mode encountered: " << static_cast<int>(mode_));
@@ -680,6 +714,9 @@ void RLControllerBase::joyInfoCallback(const sensor_msgs::msg::Joy::SharedPtr ms
   }
   if (msg->buttons.size() > 2 && msg->buttons[2] == 0) {
     walk_mode_latched = false;
+  }
+  if (msg->buttons.size() > 2 && msg->buttons[2] == 0) {
+    dreamwaq_mode_latched = false;
   }
   if (msg->buttons.size() > 3 && msg->buttons[3] == 0) {
     position_control_latched = false;

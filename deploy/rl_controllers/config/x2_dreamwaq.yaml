@@ -1,0 +1,127 @@
+rl_controllers:
+  ros__parameters:
+    DreamWaQCfg:
+      enabled: true
+      policy_file: policy/DreamWaQ/model.onnx
+
+      observation_size: 106
+      history_size: 5
+      action_size: 31
+      decimation: 10  # 500 Hz controller / 10 = 50 Hz DreamWaQ policy inference
+
+      action_scale: 0.25
+      clip_actions: 100.0
+      clip_observations: 100.0
+      phase_period: 1.0
+
+      # MuJoCo/ROS2 hardware joint order. Observation/action conversion uses
+      # X2Ultra_Sim2Sim_Joint_Order_Mapping.md below.
+      default_dof_pos:
+        - -0.25  # left_hip_pitch_joint
+        - -0.01  # left_hip_roll_joint
+        - -0.01  # left_hip_yaw_joint
+        - 0.45   # left_knee_joint
+        - -0.1   # left_ankle_pitch_joint
+        - 0.0    # left_ankle_roll_joint
+        - -0.25  # right_hip_pitch_joint
+        - -0.01  # right_hip_roll_joint
+        - -0.01  # right_hip_yaw_joint
+        - 0.45   # right_knee_joint
+        - -0.1   # right_ankle_pitch_joint
+        - 0.0    # right_ankle_roll_joint
+        - 0.0    # waist_yaw_joint
+        - 0.0    # waist_pitch_joint
+        - 0.0    # waist_roll_joint
+        - 0.4    # left_shoulder_pitch_joint
+        - 0.0    # left_shoulder_roll_joint
+        - 0.0    # left_shoulder_yaw_joint
+        - -1.2   # left_elbow_joint
+        - 0.0    # left_wrist_yaw_joint
+        - 0.0    # left_wrist_pitch_joint
+        - 0.0    # left_wrist_roll_joint
+        - 0.4    # right_shoulder_pitch_joint
+        - 0.0    # right_shoulder_roll_joint
+        - 0.0    # right_shoulder_yaw_joint
+        - -1.2   # right_elbow_joint
+        - 0.0    # right_wrist_yaw_joint
+        - 0.0    # right_wrist_pitch_joint
+        - 0.0    # right_wrist_roll_joint
+        - 0.0    # head_yaw_joint
+        - 0.0    # head_pitch_joint
+
+      # DreamWaQ PD gains in MuJoCo joint order.
+      # Synced from TienKung-Lab/legged_lab/assets/X2Ultra/x2ultra.py.
+      kp:
+        - 133.241870  # left_hip_pitch_joint
+        - 133.241870  # left_hip_roll_joint
+        - 133.241870  # left_hip_yaw_joint
+        - 133.241870  # left_knee_joint
+        - 33.615754   # left_ankle_pitch_joint
+        - 12.804825   # left_ankle_roll_joint
+        - 133.241870  # right_hip_pitch_joint
+        - 133.241870  # right_hip_roll_joint
+        - 133.241870  # right_hip_yaw_joint
+        - 133.241870  # right_knee_joint
+        - 33.615754   # right_ankle_pitch_joint
+        - 12.804825   # right_ankle_roll_joint
+        - 133.241870  # waist_yaw_joint
+        - 12.804825   # waist_pitch_joint
+        - 12.804825   # waist_roll_joint
+        - 33.615754   # left_shoulder_pitch_joint
+        - 33.615754   # left_shoulder_roll_joint
+        - 12.804825   # left_shoulder_yaw_joint
+        - 12.804825   # left_elbow_joint
+        - 12.804825   # left_wrist_yaw_joint
+        - 80.543868   # left_wrist_pitch_joint
+        - 80.543868   # left_wrist_roll_joint
+        - 33.615754   # right_shoulder_pitch_joint
+        - 33.615754   # right_shoulder_roll_joint
+        - 12.804825   # right_shoulder_yaw_joint
+        - 12.804825   # right_elbow_joint
+        - 12.804825   # right_wrist_yaw_joint
+        - 80.543868   # right_wrist_pitch_joint
+        - 80.543868   # right_wrist_roll_joint
+        - 3.947842    # head_yaw_joint
+        - 3.947842    # head_pitch_joint
+
+      kd:
+        - 8.482441  # left_hip_pitch_joint
+        - 8.482441  # left_hip_roll_joint
+        - 8.482441  # left_hip_yaw_joint
+        - 8.482441  # left_knee_joint
+        - 2.140045  # left_ankle_pitch_joint
+        - 0.815180  # left_ankle_roll_joint
+        - 8.482441  # right_hip_pitch_joint
+        - 8.482441  # right_hip_roll_joint
+        - 8.482441  # right_hip_yaw_joint
+        - 8.482441  # right_knee_joint
+        - 2.140045  # right_ankle_pitch_joint
+        - 0.815180  # right_ankle_roll_joint
+        - 8.482441  # waist_yaw_joint
+        - 0.815180  # waist_pitch_joint
+        - 0.815180  # waist_roll_joint
+        - 2.140045  # left_shoulder_pitch_joint
+        - 2.140045  # left_shoulder_roll_joint
+        - 0.815180  # left_shoulder_yaw_joint
+        - 0.815180  # left_elbow_joint
+        - 0.815180  # left_wrist_yaw_joint
+        - 5.127582  # left_wrist_pitch_joint
+        - 5.127582  # left_wrist_roll_joint
+        - 2.140045  # right_shoulder_pitch_joint
+        - 2.140045  # right_shoulder_roll_joint
+        - 0.815180  # right_shoulder_yaw_joint
+        - 0.815180  # right_elbow_joint
+        - 0.815180  # right_wrist_yaw_joint
+        - 5.127582  # right_wrist_pitch_joint
+        - 5.127582  # right_wrist_roll_joint
+        - 0.251327  # head_yaw_joint
+        - 0.251327  # head_pitch_joint
+
+      # array_lab = array_mujoco[mujoco_to_isaac_idx]
+      mujoco_to_isaac_idx: [0, 6, 12, 1, 7, 13, 2, 8, 14, 3, 9, 29, 15, 22, 4, 10, 30, 16, 23, 5, 11, 17, 24, 18, 25, 19, 26, 20, 27, 21, 28]
+
+      # array_mujoco = array_lab[isaac_to_mujoco_idx]
+      isaac_to_mujoco_idx: [0, 3, 6, 9, 14, 19, 1, 4, 7, 10, 15, 20, 2, 5, 8, 12, 17, 21, 23, 25, 27, 29, 13, 18, 22, 24, 26, 28, 30, 11, 16]
+
+      # data.ctrl[joint_to_actuator_idx[mujoco_joint_idx]] = tau_mujoco[mujoco_joint_idx]
+      joint_to_actuator_idx: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 15, 16]

@@ -207,7 +207,7 @@ struct Command {
  */
 class RLControllerBase : public controller_interface::ControllerInterface {
  public:
-  enum class Mode : uint8_t { DEFAULT, LIE, STAND, WALK };
+  enum class Mode : uint8_t { DEFAULT, LIE, STAND, WALK, DREAMWAQ };
 
   RLControllerBase();
   controller_interface::InterfaceConfiguration command_interface_configuration() const override;
@@ -228,9 +228,11 @@ class RLControllerBase : public controller_interface::ControllerInterface {
 
   virtual void handleDefaultMode();
   virtual void handleWalkMode(){};
+  virtual void handleDreamWaqMode(){};
   virtual void handleLieMode();
   virtual void handleStandMode();
   virtual void onEnterWalk(){};
+  virtual void onEnterDreamWaq(){};
   virtual void starting();
   void holdJointsAtZero(const std::vector<int>& indices);
   void holdJointsAtStand(const std::vector<int>& indices);
@@ -333,6 +335,7 @@ class RLControllerBase : public controller_interface::ControllerInterface {
   std::atomic_bool start_control_latched{false};
   std::atomic_bool switch_mode_latched{false};
   std::atomic_bool walk_mode_latched{false};
+  std::atomic_bool dreamwaq_mode_latched{false};
   std::atomic_bool position_control_latched{false};
   rclcpp::Time switchTime;
   std::vector<std::string> jointNames;
@@ -348,6 +351,7 @@ class RLControllerBase : public controller_interface::ControllerInterface {
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr emgStopSub_;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr startCtrlSub_;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr walkModeSub_;
+  rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr dreamWaqModeSub_;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr switchModeSub_;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr positionCtrlSub_;
 

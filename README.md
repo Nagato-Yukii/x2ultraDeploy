@@ -159,7 +159,7 @@
         
         ```
         cd deploy/
-        bash install/deploy_assets/scripts/start_rl_control_sim.sh
+        bash install/deploy_assets/scripts/start_rl_control_sim_ros2.sh
         ```
         
         ```
@@ -176,7 +176,7 @@
         另起终端
         
         ```
-        cd rl_deploy
+        cd deploy
         source ../aimrl_sdk/.venv/bin/activate
         source /opt/ros/humble/setup.bash
         source ../lx2501_3-v0.9.0.4/install/setup.bash
